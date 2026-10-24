@@ -180,8 +180,14 @@ if(doc){
 var doc =doc.data()
 
 //document.getElementById('lblUser').innerHTML=`Olá, ${doc.NomeAbrev}`;
-document.getElementById('nomeParagrafo').innerHTML=`Olá, ${doc.NomeAbrev}`;;
+document.getElementById('nomeParagrafo').innerHTML=`Olá, ${doc.NomeAbrev}`;
+ var foto= sessionStorage.getItem('ImagemADM_');
+      if(foto){
+document.getElementById('imgMenuUser').src= foto;
+      }else{
 document.getElementById('imgMenuUser').src= doc.Foto;
+      }
+
 //document.getElementById('imgUser').src= doc.Foto;
 sessionStorage.setItem('idUser', doc.Email);
 }else{
@@ -243,6 +249,8 @@ document.getElementById('divADM').style.display='none'
  document.getElementById('menAD').style.display='none';
  sessionStorage.setItem('ADM','')
   document.getElementById('imgMenuUser').src= 'src/Profile-PNG-Images.png'
+   sessionStorage.setItem('ImagemADM_','');
+      
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
