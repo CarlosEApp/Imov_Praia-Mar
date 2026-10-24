@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPM Imóveis Praia & Mar</title>
+
+    <link rel="shortcut icon" href="src/aba.png" type="image/x-icon">
+
+    <meta property="og:title" content="IPM | Imóveis Praia & Mar | Seu imóvel em Itanhaém">
+
+    <meta property="og:description" content="Imobiliária especializada em Itanhaém-SP e região, atuando na venda e locação de imóveis no Litoral Sul, demais cidades do litoral paulista e em todo o estado de São Paulo.">
+
+    <meta property="og:url" content="https://www.imoveispraiaemar.com.br">
+
+    <meta property="og:image" content="https://www.seusite.com.br/src/logo-capa.jpg">
+
+    <meta property="og:site_name" content="Imóveis Praia & Mar">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+     <div class="cont" id="contId"> 
+
+        <header class="header" class="headerId">
+            <div class="divHeader" id="divHeaderId">
+                <div id="header_A">  <div id="buttonHeader"> <button class="btnHeder" id="btnImoveis">Imóveis <span id="dpsetaBaixo"  class="material-symbols-outlined">arrow_drop_down</span>
+                   <span id="dpsetacima" class="material-symbols-outlined">arrow_drop_up</span> </button>
+                     
+                    <div id="opçãoHeader">
+                    <div id="optflex01Pesq">
+                      <input id="pesqflex01" type="text" placeholder="Pesquisar..."> <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </div>
+                   <div id="optdivFlax"> 
+                     <div class="opt01"> 
+                    <h3>Locação</h3>
+                    <a href="#Casas" title="Casa, Edícula, Casa geminada, Casa em condomínio" value="Casas">Casas</a> 
+                    <a href="#Apartamentos" title="Apartamento, Kitnet, Cobertura" value="Apartamentos">Apartamentos</a>
+                    <a href="#Sobrados" title="Sobrado, Sobrado em condomínio" value="Sobrados">Sobrados</a>
+                     <a href="#Terrenos" title="Terreno, Lote, Área" value="Terrenos">Terrenos</a>
+                    <a href="#Comerciais" title="Sala comercial, Loja, Galpão." value="Comerciais">Comerciais</a>
+                    <a href="#Rurais" title="Chácara, Sítio, Fazenda" value="Rurais">Rurais</a>
+
+                </div>  
+                  <div  class="opt02"> 
+                     <h3>Venda</h3>
+                    <a href="#Casas" title="Casa, Edícula, Casa geminada, Casa em condomínio" value="Casas">Casas</a> 
+                    <a href="#Apartamentos" title="Apartamento, Kitnet, Cobertura" value="Apartamentos">Apartamentos</a>
+                    <a href="#Sobrados" title="Sobrado, Sobrado em condomínio" value="Sobrados">Sobrados</a>
+                     <a href="#Terrenos" title="Terreno, Lote, Área" value="Terrenos">Terrenos</a>
+                    <a href="#Comerciais" title="Sala comercial, Loja, Galpão." value="Comerciais">Comerciais</a>
+                    <a href="#Rurais" title="Chácara, Sítio, Fazenda" value="Rurais">Rurais</a>
+
+                  </div>  
+                    <div id="opt3" class="opt03">
+                             <h3>Outros</h3>
+                              <a href="#Temporada" title="Temporada" value="Temporada">Temporada</a>
+                                     <a id="a_ADM" href="#Contato IPM" title="Contatos IPM" value="Contato IPM"> <span id="ADMIcon"  class="material-symbols-outlined">admin_panel_settings</span></a>
+                              
+
+                         </div>
+                         </div>
+
+                         <div id="optdivFlax2"> 
+                           <h3 id="h2menu">Contatos IPM <span class="material-symbols-outlined">admin_panel_settings</span> </h3>
+                         <div id="menAD"> 
+                           
+                                <div id="btnADM_"> <p>Admnistrador</p> <span class="material-symbols-outlined">verified_user</span> </div><p id="AceP">Acesso restrito a administradores.</p>
+                        </div> 
+                        <div id="contato">
+                           <div id="contFlax">
+                              <p><i class="fa-brands fa-facebook-f"></i></p> <p><i class="fa-brands fa-instagram"></i></p> <p id="emailCont"><i class="fa-regular fa-envelope"></i></p> <p id="compartilhamento"> <i class="fa-solid fa-share-nodes"></i> </p>
+                           </div>
+                           <div id="ContWhats"> WhatsApp <i id="iconeWhats" class="fa-brands fa-whatsapp"></i> </div>
+                        </div>
+                        </div>
+
+                </div></div>   <div id="imgHeader"> <img id="imgMenuUser" src="src/Profile-PNG-Images.png" alt="Logo" width="35"> <p id="nomeParagrafo">Olá,Cliente</p></div>
+                 <div id="blADM"> <div id="divADM"> <span class="material-symbols-outlined">admin_panel_settings</span> <p>Adm</p></div></div>
+                <div id="redesDiv"> <p><i class="fa-brands fa-facebook-f"></i></p> <p><i class="fa-brands fa-instagram"></i></p> <p id="emailMenu"><i class="fa-regular fa-envelope"></i></p> <p id="compartilhamento"> <i class="fa-solid fa-share-nodes"></i> </p></div>
+                 <div id="contactHeader"> <p id="btnZap">WhatsApp <i id="iconeWhats" class="fa-brands fa-whatsapp"></i></p> </div> 
+                 <div id="BTmenu"><button class="btnHeder" id="btnOpt2"><span id="munuIcon" class="material-symbols-outlined">density_medium</span></button></div></div>
+                </div>
+         </header>
+
+        <main class="main" id="mainId">
+         <div id="banser" class="banners">
+            <img src="src/logo-png.png" alt="">
+         </div>
+         <div id="divMain">
+            <div id="mainfle">
+               <div id="card1">
+                  
+               </div>
+                  <div id="card2">
+                  <img class="imgcard1" src="src/img02.jpg" alt="">
+                  <h3>O Lar dos Seus Sonhos Está Aqui </h3>
+                   <p id="pcard1_1">Sua Casa de Luxo com Excelente Custo-Benefício</p>
+               </div>
+             
+              
+            </div>
+
+         </div>
+        </main>
+
+        <footer>
+         
+        </footer>
+
+     </div>
+        <script src="js/index.js"></script>
+    
+</body>
+</html

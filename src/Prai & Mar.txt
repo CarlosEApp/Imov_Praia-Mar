@@ -1,0 +1,73 @@
+
+email:imoveispraiamaripm@gmail.com
+@Carlosgat980IPM
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBdcGs4zGY6oR42NGhRLXupJCdJ1fuDUuU",
+  authDomain: "ipm-itanhaem.firebaseapp.com",
+  projectId: "ipm-itanhaem",
+  storageBucket: "ipm-itanhaem.firebasestorage.app",
+  messagingSenderId: "512001244228",
+  appId: "1:512001244228:web:0d78ac8156b8929bc05011",
+  measurementId: "G-6YMW4PXDZ7"
+};
+
+🏡 Imóveis Praia & Mar
+
+Imóveis em Itanhaém | Imóveis Praia & Mar
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="Imóveis Praia & Mar | Seu imóvel em Itanhaém">
+
+<meta property="og:description" content="Especialistas em compra, venda e locação de imóveis em Itanhaém e região.">
+
+<meta property="og:url" content="https://www.imoveispraiaemar.com.br">
+
+<meta property="og:image" content="https://www.seusite.com.br/imagens/capa.jpg">
+
+<meta property="og:site_name" content="Imóveis Praia & Mar">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+
+
+css   font-family: "Lobster Two", sans-serif;
+
+CSS:
+
+.lobster-two-regular {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lobster-two-bold {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lobster-two-regular-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lobster-two-bold-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+
