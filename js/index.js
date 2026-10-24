@@ -182,12 +182,11 @@ var doc =doc.data()
 //document.getElementById('lblUser').innerHTML=`Olá, ${doc.NomeAbrev}`;
 document.getElementById('nomeParagrafo').innerHTML=`Olá, ${doc.NomeAbrev}`;
  var foto= sessionStorage.getItem('ImagemADM_');
-      if(foto){
-document.getElementById('imgMenuUser').src= foto;
-      }else{
+      if(!foto|| foto==''){
 document.getElementById('imgMenuUser').src= doc.Foto;
+      }else{
+document.getElementById('imgMenuUser').src= foto;
       }
-
 //document.getElementById('imgUser').src= doc.Foto;
 sessionStorage.setItem('idUser', doc.Email);
 }else{
@@ -199,7 +198,12 @@ sessionStorage.setItem('idUser', doc.Email);
 iniciarUserFirebase()
 
 document.getElementById('imgMenuUser').addEventListener('click', function(){
-var conf= localStorage.getItem('GoogleFoto')
+       var foto= sessionStorage.getItem('ImagemADM_');
+      if(!foto|| foto==''){
+    var conf= localStorage.getItem('GoogleFoto')
+      }else{
+ document.getElementById('imgMenuUser').src= foto;
+      }
 var logEmail = localStorage.getItem('GoogleEmail');
 if(!conf|| conf==''||!logEmail|| logEmail==''||conf==null||logEmail==null){
 // Swal.fire('','Você Precisa se conectar com sua conta do Google!','')
@@ -246,7 +250,7 @@ localStorage.setItem('GoogleFoto','')
 localStorage.setItem('GoogleEmail','');
 localStorage.setItem('GoogleNome','');
 sessionStorage.setItem('ImagemADM_','');
- sessionStorage.setItem('ADM','ADM-deslogado')
+ sessionStorage.setItem('ADM','')
 document.getElementById('divADM').style.display='none'
  document.getElementById('menAD').style.display='none';
 
