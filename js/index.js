@@ -202,7 +202,7 @@ document.getElementById('imgMenuUser').addEventListener('click', function(){
       if(!foto|| foto==''){
     var conf= localStorage.getItem('GoogleFoto')
       }else{
- document.getElementById('imgMenuUser').src= foto;
+      var conf= foto;
       }
 var logEmail = localStorage.getItem('GoogleEmail');
 if(!conf|| conf==''||!logEmail|| logEmail==''||conf==null||logEmail==null){
