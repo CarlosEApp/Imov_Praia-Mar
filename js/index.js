@@ -245,11 +245,13 @@ function deslogar(){
 localStorage.setItem('GoogleFoto','')
 localStorage.setItem('GoogleEmail','');
 localStorage.setItem('GoogleNome','');
+sessionStorage.setItem('ImagemADM_','');
+ sessionStorage.setItem('ADM','ADM-deslogado')
 document.getElementById('divADM').style.display='none'
  document.getElementById('menAD').style.display='none';
- sessionStorage.setItem('ADM','')
+
   document.getElementById('imgMenuUser').src= 'src/Profile-PNG-Images.png'
-   sessionStorage.setItem('ImagemADM_','');
+   
       
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -323,7 +325,6 @@ if(resMailADM=== doc.Email || SeçãoAMD==='ADM_Logado'){
    if( SeçãoAMD!='ADM_Logado'){
     if(doc.Foto){
     document.getElementById('imgMenuUser').src= doc.Foto
-    swal('','',doc.Foto)
     }
  Swal.fire(`Acesso Adm Ativo`,`<b>Bem vindo administrador(a): ${doc.Nome} \n</b>`,`success`)
    }
