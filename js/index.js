@@ -323,7 +323,7 @@ querySnapshot.forEach(doc => {
 var doc = doc.data();
 var itemss= querySnapshot.size;
 
-if(resMailADM=== doc.Email || SeçãoAMD==='ADM_Logado'){
+if(resMailADM=== doc.Email){
    document.getElementById('divADM').style.display='block';
    document.getElementById('menAD').style.display='block';
    if( SeçãoAMD!='ADM_Logado'){
