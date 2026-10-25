@@ -161,7 +161,7 @@ Hora:hora,
 })
  document.getElementById('divADM').style.display='block'
   document.getElementById('menAD').style.display='block';
-  sessionStorage.setItem('ADM','ADM_Logado')
+  localStorage.setItem('ADM','ADM_Logado')
 })
 .catch((error) => {
 console.error("Erro ao autenticar:", error);
@@ -181,14 +181,14 @@ var doc =doc.data()
 
 //document.getElementById('lblUser').innerHTML=`Olá, ${doc.NomeAbrev}`;
 document.getElementById('nomeParagrafo').innerHTML=`Olá, ${doc.NomeAbrev}`;
- var foto= sessionStorage.getItem('ImagemADM_');
+ var foto= localStorage.getItem('ImagemADM_');
       if(!foto|| foto==''){
 document.getElementById('imgMenuUser').src= doc.Foto;
       }else{
 document.getElementById('imgMenuUser').src= foto;
       }
 //document.getElementById('imgUser').src= doc.Foto;
-sessionStorage.setItem('idUser', doc.Email);
+localStorage.setItem('idUser', doc.Email);
 }else{
 //alert(`Nome: ${doc.Usuário}`)
 }
@@ -198,7 +198,7 @@ sessionStorage.setItem('idUser', doc.Email);
 iniciarUserFirebase()
 
 document.getElementById('imgMenuUser').addEventListener('click', function(){
-       var foto= sessionStorage.getItem('ImagemADM_');
+       var foto= localStorage.getItem('ImagemADM_');
       if(!foto|| foto==''){
     var conf= localStorage.getItem('GoogleFoto')
       }else{
@@ -234,9 +234,9 @@ document.getElementById('nomeUserCuston').innerHTML= `Olá, ${nome}`;
 
 // Quando clicar em "Trocar de foto"
 document.getElementById('deslogar').addEventListener('click', function(){
-  sessionStorage.setItem('idUser', '');
+  localStorage.setItem('idUser', '');
 deslogar()
-window.location.reload()
+
 });
 }
 });
@@ -249,48 +249,45 @@ function deslogar(){
 localStorage.setItem('GoogleFoto','')
 localStorage.setItem('GoogleEmail','');
 localStorage.setItem('GoogleNome','');
-sessionStorage.setItem('ImagemADM_','');
- sessionStorage.setItem('ADM','')
+localStorage.setItem('ADM','')
+localStorage.setItem('SenhaADM_', '');
+localStorage.setItem('NomeADM_', '');
+localStorage.setItem('EmailADM_', '');
+localStorage.setItem('ImagemADM_','')
+localStorage.setItem('idUser', '');
 document.getElementById('divADM').style.display='none'
- document.getElementById('menAD').style.display='none';
-
-  document.getElementById('imgMenuUser').src= 'src/Profile-PNG-Images.png'
-   
-      
+document.getElementById('menAD').style.display='none';
+document.getElementById('imgMenuUser').src= 'src/Profile-PNG-Images.png'
+window.location.reload()
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 //Email
 document.getElementById('emailMenu').addEventListener('click', function(){
-  var destinatario = 'imoveispraiamaripm@gmail.com'//sessionStorage.getItem('EmailAdmin');
-  var assunto = "🏡 Imóveis Praia & Mar";
-  var corpo = "Olá, gostaria de falar sobre IMÓVEIS.";
-  var isMobile = /Android|iPhone/i.test(navigator.userAgent);
-  if(isMobile){
-    window.location.href = `mailto:${destinatario}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-  } else {
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`,"_blank");
-  }
+var destinatario = 'imoveispraiamaripm@gmail.com'//sessionStorage.getItem('EmailAdmin');
+var assunto = "🏡 Imóveis Praia & Mar";
+var corpo = "Olá, gostaria de falar sobre IMÓVEIS.";
+var isMobile = /Android|iPhone/i.test(navigator.userAgent);
+if(isMobile){
+window.location.href = `mailto:${destinatario}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+} else {
+window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`,"_blank");
+}
 });
-
-
-
 
 //Funções de adiministradores
 document.getElementById('divADM').addEventListener('click',function(){
-
 Swal.fire({
 title: `Funções Adm <span class="material-symbols-outlined">verified_user</span>`,
 html: `
- <div id='funADM'>
-   <p id='funADM01'><span class="material-symbols-outlined">real_estate_agent</span> Cadastrar Imóvel </p>
-   <p id='funADM02'> <span class="material-symbols-outlined">home_work</span> Imóveis Cadastrados </p>
-   <p id='funADM03'><span class="material-symbols-outlined">currency_exchange</span> Imóveis Vendidos</p>
-   <p id='funADM04'><span class="material-symbols-outlined">other_houses</span> Imóveis Alugados</p>
-    <p id='funADM05'><span class="material-symbols-outlined">delete</span> Imóveis Exluidos</p>
-    <p id='funADM06'><span class="material-symbols-outlined">family_group</span> Corretores</p>
-  
- </div>
+<div id='funADM'>
+<p id='funADM01'><span class="material-symbols-outlined">real_estate_agent</span> Cadastrar Imóvel </p>
+<p id='funADM02'> <span class="material-symbols-outlined">home_work</span> Imóveis Cadastrados </p>
+<p id='funADM03'><span class="material-symbols-outlined">currency_exchange</span> Imóveis Vendidos</p>
+<p id='funADM04'><span class="material-symbols-outlined">other_houses</span> Imóveis Alugados</p>
+<p id='funADM05'><span class="material-symbols-outlined">delete</span> Imóveis Exluidos</p>
+<p id='funADM06'><span class="material-symbols-outlined">family_group</span> Corretores</p>
+</div>
 `,
 background: 'hsl(113, 100%, 2%)',
 color: '#fafafa',
@@ -299,45 +296,37 @@ showConfirmButton: false,
 customClass: { popup: 'my-custom_img' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
-
 })
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEÇÃO ADMINISTRADORES
-
-
-
 setTimeout(function(){
- var resMailADM=localStorage.getItem('GoogleEmail');
- var SeçãoAMD= sessionStorage.getItem('ADM');
- if(!resMailADM){
-   var resMailADM=''
- }
-  var adm= firebase.firestore()
-  var produtosRef = adm.collection(`Administradores`);
+var resMailADM=localStorage.getItem('GoogleEmail');
+var SeçãoAMD= localStorage.getItem('ADM');
+if(!resMailADM){
+var resMailADM=''
+}
+var adm= firebase.firestore()
+var produtosRef = adm.collection(`Administradores`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 var itemss= querySnapshot.size;
 
 if(resMailADM=== doc.Email){
-   document.getElementById('divADM').style.display='block';
-   document.getElementById('menAD').style.display='block';
-   if( SeçãoAMD!='ADM_Logado'){
-    if(doc.Foto){
-    document.getElementById('imgMenuUser').src= doc.Foto
-    }
- Swal.fire(`Acesso Adm Ativo`,`<b>Bem vindo administrador(a): ${doc.Nome} \n</b>`,`success`)
-   }
-  sessionStorage.setItem('ADM','ADM_Logado')
-  sessionStorage.setItem('SenhaADM_', doc.Senha);
-  sessionStorage.setItem('NomeADM_', doc.Nome);
-  sessionStorage.setItem('EmailADM_', doc.Email);
-  sessionStorage.setItem('ImagemADM_', doc.Foto);
-  
+document.getElementById('divADM').style.display='block';
+document.getElementById('menAD').style.display='block';
+if( SeçãoAMD!='ADM_Logado'){
+if(doc.Foto){
+document.getElementById('imgMenuUser').src= doc.Foto
+}
+Swal.fire(`Acesso Adm Ativo`,`<b>Bem vindo administrador(a): ${doc.Nome} \n</b>`,`success`)
+}
+localStorage.setItem('ADM','ADM_Logado')
+localStorage.setItem('SenhaADM_', doc.Senha);
+localStorage.setItem('NomeADM_', doc.Nome);
+localStorage.setItem('EmailADM_', doc.Email);
+localStorage.setItem('ImagemADM_', doc.Foto);
 }
 })
 })
@@ -346,13 +335,10 @@ if(resMailADM=== doc.Email){
 document.getElementById('btnADM_').addEventListener('click', function(){
 document.getElementById('divADM').click()
 })
-
 // Divs Contatos
-
 document.getElementById('emailCont').addEventListener('click',function(){
-  document.getElementById('emailMenu').click()
+document.getElementById('emailMenu').click()
 })
-
 document.getElementById('a_ADM').addEventListener('click', function(){
 document.getElementById("optflex01Pesq").style.display = "none";
 document.getElementById("dpsetacima").style.display = "none";
@@ -366,23 +352,20 @@ var btnOpt2 = document.getElementById("btnOpt2");
 btnOpt2.className='btnHederAlternativa'
 var icone= document.getElementById('munuIcon');
 icone.textContent='menu_open'
-
-
-
 });
 
 document.getElementById('divADM').style.display='none'
- document.getElementById('menAD').style.display='none';
- var SeçãoAMD= sessionStorage.getItem('ADM');
-   if(SeçãoAMD==='ADM_Logado'){
-      document.getElementById('divADM').style.display='block'
-       document.getElementById('menAD').style.display='block';
-      var foto= sessionStorage.getItem('ImagemADM_');
-         document.getElementById('imgMenuUser').src= foto
-  }else{
- sessionStorage.setItem('ADM','')
- document.getElementById('divADM').style.display='none'
-  document.getElementById('menAD').style.display='none';
-  }
+document.getElementById('menAD').style.display='none';
+var SeçãoAMD= localStorage.getItem('ADM');
+if(SeçãoAMD==='ADM_Logado'){
+document.getElementById('divADM').style.display='block'
+document.getElementById('menAD').style.display='block';
+var foto= localStorage.getItem('ImagemADM_');
+document.getElementById('imgMenuUser').src= foto
+}else{
+localStorage.setItem('ADM','')
+document.getElementById('divADM').style.display='none'
+document.getElementById('menAD').style.display='none';
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
