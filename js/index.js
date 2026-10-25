@@ -116,7 +116,10 @@ Swal.fire('',  pesquisa, 'success');
 });
 //////////////////////////////////////////////////////////////////////////////////////
 
-
+document.getElementById('divADM').style.display='none';
+  document.getElementById('menAD').style.display='none';
+ 
+      
 //login google
 function loginComGoogle() {
   var lblG=document.getElementById('labellogarLater');
@@ -159,9 +162,9 @@ Logado:'Logao',
 Data:data,
 Hora:hora,
 })
- document.getElementById('divADM').style.display='block'
-  document.getElementById('menAD').style.display='block';
-  localStorage.setItem('ADM','ADM_Logado')
+ //document.getElementById('divADM').style.display='block'
+ // document.getElementById('menAD').style.display='block';
+  //localStorage.setItem('ADM','ADM_Logado')
 })
 .catch((error) => {
 console.error("Erro ao autenticar:", error);
@@ -246,20 +249,32 @@ document.getElementById('nomeParagrafo').addEventListener('click', function(){
 
 // DESLOGAR CONTA GOOGLE E DADOS
 function deslogar(){
-localStorage.setItem('GoogleFoto','')
-localStorage.setItem('GoogleEmail','');
-localStorage.setItem('GoogleNome','');
-localStorage.setItem('ADM','')
-localStorage.setItem('SenhaADM_', '');
-localStorage.setItem('NomeADM_', '');
-localStorage.setItem('EmailADM_', '');
-localStorage.setItem('ImagemADM_','')
-localStorage.setItem('idUser', '');
-document.getElementById('divADM').style.display='none'
-document.getElementById('menAD').style.display='none';
-document.getElementById('imgMenuUser').src= 'src/Profile-PNG-Images.png'
-window.location.reload()
+
+
+    firebase.auth().signOut().then(() => {
+
+        localStorage.removeItem('GoogleFoto');
+        localStorage.removeItem('GoogleEmail');
+        localStorage.removeItem('GoogleNome');
+        localStorage.removeItem('GoogleNome_Abreviado');
+
+        localStorage.removeItem('ADM');
+        localStorage.removeItem('SenhaADM_');
+        localStorage.removeItem('NomeADM_');
+        localStorage.removeItem('EmailADM_');
+        localStorage.removeItem('ImagemADM_');
+        localStorage.removeItem('idUser');
+
+        sessionStorage.clear();
+
+        window.location.reload();
+
+    }).catch((error) => {
+        alert('Erro ao deslogar:');
+    });
+
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 //Email
@@ -300,37 +315,7 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEÇÃO ADMINISTRADORES
-setTimeout(function(){
-var resMailADM=localStorage.getItem('GoogleEmail');
-var SeçãoAMD= localStorage.getItem('ADM');
-if(!resMailADM){
-var resMailADM=''
-}
-var adm= firebase.firestore()
-var produtosRef = adm.collection(`Administradores`);
-produtosRef.get().then((querySnapshot) => {
-querySnapshot.forEach(doc => {
-var doc = doc.data();
-var itemss= querySnapshot.size;
 
-if(resMailADM=== doc.Email){
-document.getElementById('divADM').style.display='block';
-document.getElementById('menAD').style.display='block';
-if( SeçãoAMD!='ADM_Logado'){
-if(doc.Foto){
-document.getElementById('imgMenuUser').src= doc.Foto
-}
-Swal.fire(`Acesso Adm Ativo`,`<b>Bem vindo administrador(a): ${doc.Nome} \n</b>`,`success`)
-}
-localStorage.setItem('ADM','ADM_Logado')
-localStorage.setItem('SenhaADM_', doc.Senha);
-localStorage.setItem('NomeADM_', doc.Nome);
-localStorage.setItem('EmailADM_', doc.Email);
-localStorage.setItem('ImagemADM_', doc.Foto);
-}
-})
-})
-},7000)
 
 document.getElementById('btnADM_').addEventListener('click', function(){
 document.getElementById('divADM').click()
@@ -367,5 +352,62 @@ localStorage.setItem('ADM','')
 document.getElementById('divADM').style.display='none'
 document.getElementById('menAD').style.display='none';
 }
+document.getElementById('divADM').style.display='none';
+document.getElementById('menAD').style.display='none';
+
+const emailAtual = localStorage.getItem('GoogleEmail');
+
+firebase.firestore()
+.collection('Administradores')
+.where('Email', '==', emailAtual)
+.get()
+.then(snapshot => {
+
+  if(!snapshot.empty){
+
+      document.getElementById('divADM').style.display='block';
+      document.getElementById('menAD').style.display='block';
+      var resMailADM=localStorage.getItem('GoogleEmail');
+      var adm= firebase.firestore()
+      var produtosRef = adm.collection(`Administradores`);
+      produtosRef.get().then((querySnapshot) => {
+      querySnapshot.forEach(doc => {
+      var doc = doc.data();
+      var itemss= querySnapshot.size;
+
+      if(resMailADM=== emailAtual){
+      document.getElementById('divADM').style.display='block';
+      document.getElementById('menAD').style.display='block';
+      if( SeçãoAMD!='ADM_Logado'){
+      if(doc.Foto){
+      document.getElementById('imgMenuUser').src= doc.Foto
+} else{
+Swal.fire(`Acesso Adm Ativo`,`<b>Bem vindo administrador(a): ${doc.Nome} \n</b>`,`success`)
+}
+
+localStorage.setItem('SenhaADM_', doc.Senha);
+localStorage.setItem('NomeADM_', doc.Nome);
+localStorage.setItem('EmailADM_', doc.Email);
+localStorage.setItem('ImagemADM_', doc.Foto);
+
+}
+      }
+    })
+    })
+
+      localStorage.setItem('ADM','ADM_Logado');
+     
+
+  }else{
+
+      localStorage.removeItem('ADM');
+
+      document.getElementById('divADM').style.display='none';
+      document.getElementById('menAD').style.display='none';
+   
+
+  }
+
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
