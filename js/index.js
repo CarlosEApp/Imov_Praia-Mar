@@ -367,6 +367,7 @@ firebase.firestore()
 
       document.getElementById('divADM').style.display='block';
       document.getElementById('menAD').style.display='block';
+      var SeçãoAMD= localStorage.getItem('ADM');
   
       var adm= firebase.firestore()
       var produtosRef = adm.collection(`Administradores`);
@@ -376,7 +377,7 @@ firebase.firestore()
       var itemss= querySnapshot.size;
 
       if(doc.Email=== emailAtual){
-        
+        swal('',`${doc.Email}-${emailAtual}`, doc.Foto)
       document.getElementById('divADM').style.display='block';
       document.getElementById('menAD').style.display='block';
       if( SeçãoAMD!='ADM_Logado'){
