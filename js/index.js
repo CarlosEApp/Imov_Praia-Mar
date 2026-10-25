@@ -367,7 +367,7 @@ firebase.firestore()
 
       document.getElementById('divADM').style.display='block';
       document.getElementById('menAD').style.display='block';
-      var resMailADM=localStorage.getItem('GoogleEmail');
+  
       var adm= firebase.firestore()
       var produtosRef = adm.collection(`Administradores`);
       produtosRef.get().then((querySnapshot) => {
@@ -375,7 +375,8 @@ firebase.firestore()
       var doc = doc.data();
       var itemss= querySnapshot.size;
 
-      if(resMailADM=== emailAtual){
+      if(doc.Email=== emailAtual){
+        
       document.getElementById('divADM').style.display='block';
       document.getElementById('menAD').style.display='block';
       if( SeçãoAMD!='ADM_Logado'){
