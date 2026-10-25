@@ -85,6 +85,16 @@ var icone= document.getElementById('munuIcon');
 icone.textContent='density_medium'
 }
 });
+
+//Click baner para fechar menu
+document.getElementById('banser').addEventListener('click',function(){
+  var localAberto= document.getElementById("opçãoHeader").style.display;
+  if(localAberto=='none'){
+
+  } else{
+ document.getElementById('btnImoveis').click()
+  }
+})
 ///////////////////////////////////////////////////////////////////////////
 
 // Adicionar evento de clique aos links dentro de .opt01 LOCAÇÂO
@@ -231,7 +241,6 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.getElementById('imimg').src=conf;
 document.getElementById('EmailUserCuston').innerHTML=logEmail
-
 var nome= localStorage.getItem('GoogleNome_Abreviado')
 document.getElementById('nomeUserCuston').innerHTML= `Olá, ${nome}`;
 
@@ -239,7 +248,6 @@ document.getElementById('nomeUserCuston').innerHTML= `Olá, ${nome}`;
 document.getElementById('deslogar').addEventListener('click', function(){
   localStorage.setItem('idUser', '');
 deslogar()
-
 });
 }
 });
@@ -249,32 +257,23 @@ document.getElementById('nomeParagrafo').addEventListener('click', function(){
 
 // DESLOGAR CONTA GOOGLE E DADOS
 function deslogar(){
-
-
     firebase.auth().signOut().then(() => {
-
         localStorage.removeItem('GoogleFoto');
         localStorage.removeItem('GoogleEmail');
         localStorage.removeItem('GoogleNome');
         localStorage.removeItem('GoogleNome_Abreviado');
-
         localStorage.removeItem('ADM');
         localStorage.removeItem('SenhaADM_');
         localStorage.removeItem('NomeADM_');
         localStorage.removeItem('EmailADM_');
         localStorage.removeItem('ImagemADM_');
         localStorage.removeItem('idUser');
-
         sessionStorage.clear();
-
         window.location.reload();
-
     }).catch((error) => {
         alert('Erro ao deslogar:');
     });
-
 }
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 //Email
@@ -315,8 +314,6 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEÇÃO ADMINISTRADORES
-
-
 document.getElementById('btnADM_').addEventListener('click', function(){
 document.getElementById('divADM').click()
 })
@@ -328,7 +325,6 @@ document.getElementById('a_ADM').addEventListener('click', function(){
 document.getElementById("optflex01Pesq").style.display = "none";
 document.getElementById("dpsetacima").style.display = "none";
 document.getElementById("dpsetaBaixo").style.display = "Block";
-
 document.getElementById("opçãoHeader").style.display = "block";
 document.getElementById("optdivFlax").style.display = "none";
 document.getElementById("optdivFlax2").style.display = "block";
@@ -356,7 +352,6 @@ document.getElementById('divADM').style.display='none';
 document.getElementById('menAD').style.display='none';
 
 const emailAtual = localStorage.getItem('GoogleEmail');
-
 firebase.firestore()
 .collection('Administradores')
 .where('Email', '==', emailAtual)
@@ -377,7 +372,6 @@ firebase.firestore()
       var itemss= querySnapshot.size;
 
       if(doc.Email=== emailAtual){
-       
       document.getElementById('divADM').style.display='block';
       document.getElementById('menAD').style.display='block';
       if( SeçãoAMD!='ADM_Logado'){
@@ -386,30 +380,20 @@ firebase.firestore()
 } else{
 Swal.fire(`Acesso Adm Ativo`,`<b>Bem vindo administrador(a): ${doc.Nome} \n</b>`,`success`)
 }
-
 localStorage.setItem('SenhaADM_', doc.Senha);
 localStorage.setItem('NomeADM_', doc.Nome);
 localStorage.setItem('EmailADM_', doc.Email);
 localStorage.setItem('ImagemADM_', doc.Foto);
-
 }
       }
     })
     })
-
       localStorage.setItem('ADM','ADM_Logado');
-     
-
   }else{
-
       localStorage.removeItem('ADM');
-
       document.getElementById('divADM').style.display='none';
       document.getElementById('menAD').style.display='none';
-   
-
   }
-
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
