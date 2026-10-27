@@ -31,6 +31,26 @@ measurementId: "G-6YMW4PXDZ7"
 firebase.initializeApp(firebaseConfig);
 //////////////////////////////////////////////////////////////////
 
+//Data e Hora
+setInterval(function() {
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+//const lbl_data = document.getElementById('lbl-data');
+//lbl_data.innerHTML = `${data}`
+//localStorage.setItem('data', data)
+sessionStorage.setItem('hora', timeString)
+sessionStorage.setItem('data', data)
+document.getElementById('P_hora').innerHTML = `${timeString}`
+}, 1000)
+
 //Botões Header
 document.getElementById("opçãoHeader").style.display = "none";
 document.getElementById("dpsetacima").style.display = "none";
@@ -46,6 +66,7 @@ document.getElementById("opçãoHeader").style.display = "block";
 document.getElementById("optdivFlax").style.display = "block";
 document.getElementById("optdivFlax").style.display = "flex";
 document.getElementById("optdivFlax2").style.display = "none";
+document.getElementById('a_inicio').click()
 var btnImoveis = document.getElementById("btnImoveis");
 btnImoveis.className='btnHederAlternativa'
 document.getElementById("dpsetacima").style.display = "block";
@@ -73,6 +94,7 @@ document.getElementById("opçãoHeader").style.display = "block";
 document.getElementById("optdivFlax").style.display = "none";
 document.getElementById("optdivFlax2").style.display = "block";
 document.getElementById("optdivFlax2").style.display = "flex";
+document.getElementById('a_inicio').click()
 var btnOpt2 = document.getElementById("btnOpt2");
 btnOpt2.className='btnHederAlternativa'
 var icone= document.getElementById('munuIcon');
@@ -101,7 +123,9 @@ document.getElementById('banser').addEventListener('click',function(){
 document.querySelectorAll('.opt01 a').forEach(link => {
 link.addEventListener('click', function () {
 // console.log(this.textContent);
+
 Swal.fire('',  this.textContent, 'success');
+
 });
 });
 ////////////////////////////////////////////////////////////////////////////
@@ -110,6 +134,7 @@ Swal.fire('',  this.textContent, 'success');
 document.querySelectorAll('.opt02 a').forEach(link => {
 link.addEventListener('click', function () {
 // console.log(this.textContent);
+
 Swal.fire('',  this.textContent, 'success');
 });
 });
