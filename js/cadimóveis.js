@@ -132,6 +132,7 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
  document.getElementById('reflist2').innerHTML=length.textContent;
+
 Swal.close()
 })
 })
@@ -332,6 +333,7 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
  document.getElementById('reflist2').innerHTML=length.textContent;
+ 
 Swal.close()
 })
 })
@@ -459,6 +461,54 @@ length.addEventListener('click', function () {
 })
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
+//dados comodos
+document.querySelectorAll('#informecad p').forEach(length => {
+length.addEventListener('click', function () {
+
+  if(length.id==='titulo'){
+    Swal.fire({
+title: `Titulo`,
+html: `
+<div id='custonTitulo'>
+    <div>
+     <input  id="inpuTitulo" type="text" placeholder="Titulo do imóvel">
+    </div>
+      <button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+   
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-comodos' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+ setInterval(function(){
+  var btn=document.getElementById('salvarComodos');
+  var inp=document.getElementById('inpuTitulo').value;
+    if(inp!=''){
+     btn.style.backgroundColor='rgb(0, 153, 255)'
+    }else{
+       btn.style.backgroundColor='rgb(101, 102, 102)'
+    }
+ })
+ document.getElementById('salvarComodos').addEventListener('click',function(){
+ var inp=document.getElementById('inpuTitulo').value;
+ if(inp){
+  document.getElementById('titulo').innerHTML=inp
+  Swal.close()
+ //alert(inp)
+ }
+  
+ })
+  
+  
+  }
+})
+})
+
 
 
 

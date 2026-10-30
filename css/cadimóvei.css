@@ -202,7 +202,7 @@ main{
    
 }
 #prmaryEscol div:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(19, 19, 19, 0.5);
     color: white;
     box-shadow: 0px 1px 1px black;
 }
@@ -232,7 +232,7 @@ main{
 }
 #Cadastro h3{
     width: auto;
-    background-color:rgb(209, 214, 255);
+    background-color:rgb(222, 225, 255);
     padding-top: 5px;
     padding-bottom: 5px;
 
@@ -242,7 +242,7 @@ main{
     margin-right: 20px;
 }
 #listRef1{
-    background-color: rgba(255, 196, 0, 0);
+    background-color: rgba(128, 127, 126, 0.473);
     text-align: center;
     padding-top: 1px;
     padding-bottom: 1px;
@@ -261,7 +261,8 @@ main{
     
 }
 .my-custonRef2{
-    max-width: 400px;
+    width: 95%;
+    max-width: 320px;
     border-radius: 20px;
     overflow: hidden;
   
@@ -271,6 +272,7 @@ main{
     margin-bottom: 10px;
     color: black;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.603);
+     font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
    
 }
 .my-custonRef2 p:hover{
@@ -294,14 +296,14 @@ main{
     margin-bottom: 5px;
 }
 #informecad p{
-      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
      font-weight: bold;
       cursor: pointer;
         margin-bottom: 10px;
         margin-top: 10px;
+         margin-left: 5px;
 }
 #informecad p:hover{
-      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
       cursor: pointer;
       text-decoration:underline 1px solid ;
     
@@ -321,4 +323,47 @@ main{
 }
 #exit:hover{
       color: rgb(255, 2, 2);
+}
+.my-comodos{
+    width: 95%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.459);
+}
+.my-comodos input{
+    width: 90%;
+    cursor:auto;
+    border: 0cap;
+    outline: none;
+    background-color: transparent;
+    font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+}
+.my-comodos h2{
+     font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+}
+#salvarComodos{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border: 0cap;
+    cursor: pointer;
+       font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+       float: right;
+       margin-right: 10px;
+       background-color: transparent;
+       font-weight: bold;
+       background-color: rgba(92, 92, 92, 0.795);
+       border-radius: 20px;
+       color: aliceblue;
+       padding: 2px;
+       padding-right: 10px;
+       padding-left: 10px;
+
+}
+#salvarComodos span{
+     font-size: clamp(1.800rem, 0.3vw  + 0.5rem, 1.900rem);
+}
+#salvarComodos:hover{
+    background-color: rgb(72, 190, 3);
 }
