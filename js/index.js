@@ -48,7 +48,7 @@ const timeString = `${hours}:${minutes}:${seconds}`;
 //localStorage.setItem('data', data)
 sessionStorage.setItem('hora', timeString)
 sessionStorage.setItem('data', data)
-document.getElementById('P_hora').innerHTML = `${timeString}`
+//document.getElementById('P_hora').innerHTML = `${timeString}`
 }, 1000)
 
 //Botões Header
@@ -335,6 +335,39 @@ showConfirmButton: false,
 customClass: { popup: 'my-custom_img' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
+document.querySelectorAll('#funADM p').forEach(length => {
+length.addEventListener('click', function () {
+  if(length.id==='funADM01'){
+    window.open('../html/cadimóvel.html','_blank')
+   // alert(length.id)
+  }
+
+   if(length.id==='funADM02'){
+   // window.open('../html/cadimóvel.html','_blank')
+    //alert(length.id)
+  }
+
+     if(length.id==='funADM03'){
+   // window.open('../html/cadimóvel.html','_blank')
+    //alert(length.id)
+  }
+
+     if(length.id==='funADM04'){
+   // window.open('../html/cadimóvel.html','_blank')
+    //alert(length.id)
+  }
+
+     if(length.id==='funADM05'){
+   // window.open('../html/cadimóvel.html','_blank')
+   // alert(length.id)
+  }
+
+     if(length.id==='funADM06'){
+   // window.open('../html/cadimóvel.html','_blank')
+   // alert(length.id)
+  }
+})
+})
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

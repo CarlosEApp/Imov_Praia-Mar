@@ -47,6 +47,9 @@ header{
     width: 100%;
     max-width: 1920px;
     background-color: antiquewhite;
+      background-image: url('../src/fundo.png');
+      background-size: cover;
+      
 }
 #BTNdivHeader{
     width: 100%;
@@ -93,101 +96,229 @@ header{
 main{
     margin: auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1400px;
     background-color:transparent;
-    margin-top: 20px;
+}
+#oquecadastrar{
+    position: fixed;
+    background-color: rgb(5, 5, 5);
+    width: 127px;
+    min-height: auto;
+      padding: 10px;
+      color: aliceblue;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      z-index: 99;
+      cursor: pointer;
+}
+#oquecadastrar p{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 #divFlax{
     margin: auto;
-    width: 93%;
     display: flex;
-    padding: 10px;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     background-image: url('../src/fundo.png');
     border-radius: 10px;
+    float: left;
+    margin-top: 20px;
+    z-index: 99;
+    display: none;
 }
 #divFlax div{
     margin: auto;
-    text-align: center;
-    min-width: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-     font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
-     margin-left: 3px;
-     margin-right: 3px;
+   text-align: center;
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   padding-right: 10px;
+   padding-left: 10px;
+     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
      background-color: black;
      color: aliceblue;
      margin-top: 10px;
      margin-bottom: 10px;
      cursor: pointer;
      border-radius: 5px;
+        margin-left: 3px;
+     margin-right: 3px;
+     
 }
 #divFlax div:hover{
         background-color: antiquewhite;
           color: rgb(2, 2, 2);
 }
-@media (max-width: 600px) {
-#divFlax div{
-    margin: auto;
-    text-align: center;
-    min-width: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-     font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
-     margin-left: 3px;
-     margin-right: 3px;
-     background-color: black;
-     color: aliceblue;
-     margin-top: 10px;
-     margin-bottom: 10px;
-     cursor: pointer;
-     border-radius: 5px;
-}
+.divOPT{
+    display: none;
 }
 
-@media (max-width: 500px) {
-#divFlax div{
+
+#divmain{
     margin: auto;
-    text-align: center;
-    min-width: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-     font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
-     margin-left: 3px;
-     margin-right: 3px;
-     background-color: black;
-     color: aliceblue;
-     margin-top: 10px;
-     margin-bottom: 10px;
-     cursor: pointer;
-     border-radius: 5px;
+    width: 100%;
+    max-width: 1400px;
+    background-color: rgba(0, 120, 136, 0);
+    margin-top: 10px;
+    margin-right: 80vh;
+    margin-bottom: 50px;
+
 }
-}
-@media (max-width: 400px) {
-#divFlax div{
+
+#cadvPrimary{
+    padding-top: 64px;
     margin: auto;
-    text-align: center;
-    min-width: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
-     margin-left: 3px;
-     margin-right: 3px;
-     background-color: black;
-     color: aliceblue;
-     margin-top: 10px;
-     margin-bottom: 10px;
-     cursor: pointer;
-     border-radius: 5px;
+    width: 98%;
+    max-width: 800px;
+    background-color: transparent;
+    min-height: 40vh;
+     max-height: 80vh;
+     display: none;
+    
+    
 }
+#prmaryEscol{
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    
+}
+#prmaryEscol div{
+    width: 100%;
+    background-color:rgb(209, 214, 255);
+    text-align: center;
+    align-items: center;
+     min-height: 5vh;
+    max-height: 5vh;
+    cursor: pointer;
+    border-right: 1px solid rgba(0, 0, 0, 0.384);
+    border-bottom:2px solid rgba(0, 0, 0, 0.288) ;
+    
+   
+}
+#prmaryEscol div:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 0px 1px 1px black;
+}
+#prmaryEscol .Activ{
+    background-color: black;
+    color: aliceblue;
+    box-shadow:  1px 1px 1px rgba(0, 0, 0, 0.747);
+}
+#prmaryEscol div h2{
+    margin-top: 12px;
+      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+}
+#divCadastro{
+    margin: 0 auto;
+    width: 100%;
+    min-height: 40vh;
+    background-color: white;
+    max-height: 60vh;
+    overflow: auto;
+}
+#Cadastro{
+    margin: 0 auto;
+   width: 99%;
+   min-height:40vh;
+   background-color: rgba(0, 255, 255, 0.014)(0, 255, 255, 0.911);
+   padding-top: 20px;
+}
+#Cadastro h3{
+    width: auto;
+    background-color:rgb(209, 214, 255);
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+#NumSerie{
+    float:right;
+    margin-right: 20px;
+}
+#listRef1{
+    background-color: rgba(255, 196, 0, 0);
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+}
+#reflist2{
+    text-align: center;
+    background-color: transparent;
+    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+    margin-left: 5px;
+    cursor: pointer;
+}
+#flaex-div{
+    display:  flex;
+    align-items: center;
+    
+}
+.my-custonRef2{
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+  
+}
+.my-custonRef2 p{
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: black;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.603);
+   
+}
+.my-custonRef2 p:hover{
+  font-weight: bold;
+   
+}
+.my-custonRef2 h2{
+    background-color: rgb(3, 3, 3);
+    color:rgb(253, 249, 249);
+      font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.600rem);
+      padding-bottom: 10px;
+}
+.lblred{
+    color: rgb(97, 1, 54);
+}
+.lblblack{
+    color: black;
+}
+#h3def{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#informecad p{
+      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+     font-weight: bold;
+      cursor: pointer;
+        margin-bottom: 10px;
+        margin-top: 10px;
+}
+#informecad p:hover{
+      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+      cursor: pointer;
+      text-decoration:underline 1px solid ;
+    
+}
+#informecad{
+    display: none;
+    padding-bottom: 50px;
+}
+#exit{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    background-color: aliceblue;
+    padding-top:  auto;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-shadow: 0px 0px 1px black;
+}
+#exit:hover{
+      color: rgb(255, 2, 2);
 }
