@@ -338,7 +338,7 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 document.querySelectorAll('#funADM p').forEach(length => {
 length.addEventListener('click', function () {
   if(length.id==='funADM01'){
-    window.open('../html/cadimóvel.html','_blank')
+    window.open('html/cadimóvel.html','_blank')
    // alert(length.id)
   }
 
