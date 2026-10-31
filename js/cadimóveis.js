@@ -489,7 +489,7 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
   var btn=document.getElementById('salvarComodos');
   var inp=document.getElementById('inpuTitulo').value;
     if(inp!=''){
-     btn.style.backgroundColor='rgb(0, 153, 255)'
+     btn.style.backgroundColor='rgb(0, 60, 255)'
     }else{
        btn.style.backgroundColor='rgb(101, 102, 102)'
     }
@@ -528,7 +528,7 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
   var btn=document.getElementById('salvarComodos');
   var inp=document.getElementById('inpuDescrever').value;
     if(inp!=''){
-     btn.style.backgroundColor='rgb(0, 153, 255)'
+     btn.style.backgroundColor='rgb(0, 60, 255)'
     }else{
        btn.style.backgroundColor='rgb(101, 102, 102)'
     }
@@ -560,14 +560,14 @@ background: 'hsl(208, 100%, 98%)',
 color: '#111111',
 showCloseButton: true,
 showConfirmButton: false,
-customClass: { popup: 'my-comodos' },
+customClass: { popup: 'my-quarto' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
  setInterval(function(){
   var btn=document.getElementById('salvarComodos');
   var inp=document.getElementById('inpuQQ').value;
     if(inp!=''){
-     btn.style.backgroundColor='rgb(0, 153, 255)'
+     btn.style.backgroundColor='rgb(0, 60, 255)'
     }else{
        btn.style.backgroundColor='rgb(101, 102, 102)'
     }
