@@ -258,6 +258,9 @@ main{
     margin-left: 5px;
     cursor: pointer;
 }
+#reflist2:hover{
+text-decoration:underline 1px solid black;
+}
 #flaex-div{
     display:  flex;
     align-items: center;
@@ -272,16 +275,18 @@ main{
 }
 .my-custonRef2 p{
     cursor: pointer;
-    margin-bottom: 10px;
+   border-bottom: 2px solid rgba(0, 0, 0, 0.432);
     color: black;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.603);
      font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+     background-color: rgb(199, 205, 255);
+     padding: 10px;
     
    
 }
 .my-custonRef2 p:hover{
-  font-weight: bold;
-   text-decoration:underline 1px solid black;
+background-color: rgb(7, 7, 7);
+ color: white;
    
 }
 .my-custonRef2 h2{
@@ -335,6 +340,7 @@ main{
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.459);
+   
 }
 .my-comodos input{
     width: 90%;
@@ -369,6 +375,13 @@ main{
 #salvarComodos span{
      font-size: clamp(1.800rem, 0.3vw  + 0.5rem, 1.900rem);
 }
-#salvarComodos:hover{
-    background-color: rgb(72, 190, 3);
+
+#inpuQQ, #inpuQT{
+width: 64px;
+border: 2px solid rgba(0, 0, 0, 0.603);
+padding: 7px;
+margin-right: 20px;
+cursor: pointer;
+text-align: center;
+border-radius: 10px;
 }

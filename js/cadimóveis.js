@@ -501,11 +501,94 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
   Swal.close()
  //alert(inp)
  }
-  
  })
-  
-  
+  };
+ //alert(length.id)
+  if(length.id==='decrit'){
+   
+    Swal.fire({
+title: `Descreva o Imóvel`,
+html: `
+<div id='custonTitulo'>
+    <div>
+     <input  id="inpuDescrever" type="text" placeholder="Descrição do imóvel">
+    </div>
+      <button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+   
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-comodos' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+ setInterval(function(){
+  var btn=document.getElementById('salvarComodos');
+  var inp=document.getElementById('inpuDescrever').value;
+    if(inp!=''){
+     btn.style.backgroundColor='rgb(0, 153, 255)'
+    }else{
+       btn.style.backgroundColor='rgb(101, 102, 102)'
+    }
+ })
+ document.getElementById('salvarComodos').addEventListener('click',function(){
+ var inp=document.getElementById('inpuDescrever').value;
+ if(inp){
+  document.getElementById('decrit').innerHTML=inp
+  Swal.close()
+ //alert(inp)
+ }
+ })
+  };
+
+  if(length.id==='Quartos'){
+   
+    Swal.fire({
+title: `Quartos?`,
+html: `
+<div id='custonTitulo'>
+    <div>
+    Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+    </div>
+      <button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+   
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-comodos' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+ setInterval(function(){
+  var btn=document.getElementById('salvarComodos');
+  var inp=document.getElementById('inpuQQ').value;
+    if(inp!=''){
+     btn.style.backgroundColor='rgb(0, 153, 255)'
+    }else{
+       btn.style.backgroundColor='rgb(101, 102, 102)'
+    }
+ })
+ document.getElementById('salvarComodos').addEventListener('click',function(){
+ var inp=document.getElementById('inpuQQ').value;
+ var inp2=document.getElementById('inpuQT').value;
+ if(inp){
+  if(inp2){
+document.getElementById('Quartos').innerHTML=`Quartos: (${inp}) / (${inp2}) m²`
+  } else{
+    document.getElementById('Quartos').innerHTML=`Quartos: (${inp})`
   }
+  
+  Swal.close()
+ //alert(inp)
+ }
+ })
+  }
+
+
 })
 })
 
@@ -523,11 +606,13 @@ document.querySelectorAll('#Cadastro i').forEach(length=>{
  document.getElementById('titulo').click()
     };
       if(length.id==="I_laps02"){
-   alert(length.id)
+   //alert(length.id)
+   document.getElementById('decrit').click()
 
     };
       if(length.id==="I_laps03"){
-   alert(length.id)
+  // alert(length.id)
+  document.getElementById('Quartos').click()
 
     };
       if(length.id==="I_laps04"){
