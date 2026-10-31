@@ -511,6 +511,44 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 
 
+// Lapis I 
+document.querySelectorAll('#Cadastro i').forEach(length=>{
+  length.addEventListener('click', function(){
+    if(length.id==="I_laps00"){
+      //alert(length.id)
+     document.getElementById('reflist2').click()
+    };
+    if(length.id==="I_laps01"){
+   //alert(length.id)
+ document.getElementById('titulo').click()
+    };
+      if(length.id==="I_laps02"){
+   alert(length.id)
+
+    };
+      if(length.id==="I_laps03"){
+   alert(length.id)
+
+    };
+      if(length.id==="I_laps04"){
+   alert(length.id)
+
+    };
+      if(length.id==="I_laps05"){
+   alert(length.id)
+
+    };
+      if(length.id==="I_laps06"){
+   alert(length.id)
+
+    };
+      if(length.id==="I_laps07"){
+   alert(length.id)
+
+    };
+
+  })
+})
 
 
 
