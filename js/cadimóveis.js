@@ -55,40 +55,46 @@ firebase.initializeApp(firebaseConfig);
 
 // função limpar cad
 function limparcad(){
-   document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML='Imóvel tipo'
-     document.getElementById('reflist2').innerHTML='Lista referente?'
-        document.getElementById('titulo').innerHTML='Titulo do Imóvel'
-           document.getElementById('decrit').innerHTML='Descrição do imóvel'
-              document.getElementById('Quartos').innerHTML='Quartos'
-                 document.getElementById('Salas').innerHTML='Salas'
-                    document.getElementById('Cozinhas').innerHTML='Cozinhas'
-                       document.getElementById('Banheiros').innerHTML='Banheiros'
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML='Imóvel tipo'
+document.getElementById('reflist2').innerHTML='Lista referente?'
+document.getElementById('titulo').innerHTML='Titulo do Imóvel'
+document.getElementById('decrit').innerHTML='Descrição do imóvel'
+document.getElementById('Quartos').innerHTML='Quartos'
+document.getElementById('Salas').innerHTML='Salas'
+document.getElementById('Cozinhas').innerHTML='Cozinhas'
+document.getElementById('Banheiros').innerHTML='Banheiros'
+document.getElementById('Piscina').innerHTML='Piscina'
+document.getElementById('Garagem').innerHTML='Garagem'
+document.getElementById('Area').innerHTML='Área construída'
+
+
 }
 
 document.querySelectorAll('#divFlax div').forEach(length => {
 length.addEventListener('click', function () {
  
 
- if(length.textContent==='Casa'){
-   document.getElementById('cadvPrimary').style.display='block'
-  limparcad()
-     document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML=length.textContent
-      document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
-     geradorCodigo()
-     
+
+if(length.textContent==='Casa'){
+document.getElementById('cadvPrimary').style.display='block'
+limparcad()
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML=length.textContent
+document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
+geradorCodigo()
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Casa'>Casa</p> 
-    <p id='Edícula'>Edícula</p>
-     <p id='Casa_geminada'>Casa geminada</p>
-      <p id='Casa_em_condomínio'>Casa em condomínio</p>
+<p id='Casa'>Casa</p> 
+<p id='Edícula'>Edícula</p>
+<p id='Casa_geminada'>Casa geminada</p>
+<p id='Casa_em_condomínio'>Casa em condomínio</p>
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#080808',
 showCloseButton: true,
 showConfirmButton: false,
@@ -98,30 +104,30 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
+document.getElementById('reflist2').innerHTML=length.textContent;
 Swal.close()
 })
 })
- }
- 
- if(length.textContent==='Sobrado'){
-  document.getElementById('cadvPrimary').style.display='block'
-  limparcad()
-     document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML=length.textContent
-     document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
-     geradorCodigo()
-     
+}
+
+if(length.textContent==='Sobrado'){
+document.getElementById('cadvPrimary').style.display='block'
+limparcad()
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML=length.textContent
+document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
+geradorCodigo()
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Sobrado'>Sobrado</p> 
-    <p id='Sobrado_em_condomínio'>Sobrado em condomínio</p>
-   
+<p id='Sobrado'>Sobrado</p> 
+<p id='Sobrado_em_condomínio'>Sobrado em condomínio</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#020202',
 showCloseButton: true,
 showConfirmButton: false,
@@ -131,31 +137,31 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
+document.getElementById('reflist2').innerHTML=length.textContent;
 
 Swal.close()
 })
 })
- }
- if(length.textContent==='Apartamento'){
-   document.getElementById('cadvPrimary').style.display='block'
-  limparcad()
-     document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML=length.textContent
-     document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
-     geradorCodigo()
-     
+}
+if(length.textContent==='Apartamento'){
+document.getElementById('cadvPrimary').style.display='block'
+limparcad()
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML=length.textContent
+document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
+geradorCodigo()
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Apartamento'>Apartamento</p> 
-    <p id='Kitnet'>Kitnet</p>
-     <p id='Cobertura'>Cobertura</p>
-   
+<p id='Apartamento'>Apartamento</p> 
+<p id='Kitnet'>Kitnet</p>
+<p id='Cobertura'>Cobertura</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#020202',
 showCloseButton: true,
 showConfirmButton: false,
@@ -165,31 +171,31 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
+document.getElementById('reflist2').innerHTML=length.textContent;
 Swal.close()
 })
 })
- }
+}
 
- if(length.textContent==='Terreno'){
-   document.getElementById('cadvPrimary').style.display='block'
-  limparcad()
-     document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML=length.textContent
-     document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
-     geradorCodigo()
-     
+if(length.textContent==='Terreno'){
+document.getElementById('cadvPrimary').style.display='block'
+limparcad()
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML=length.textContent
+document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
+geradorCodigo()
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Terreno'>Terreno</p> 
-    <p id='Lote'>Lote</p>
-     <p id='Área'>Área</p>
-   
+<p id='Terreno'>Terreno</p> 
+<p id='Lote'>Lote</p>
+<p id='Área'>Área</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#020202',
 showCloseButton: true,
 showConfirmButton: false,
@@ -199,31 +205,31 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
+document.getElementById('reflist2').innerHTML=length.textContent;
 Swal.close()
 })
 })
- }
+}
 
- if(length.textContent==='Comercial'){
-   document.getElementById('cadvPrimary').style.display='block'
-  limparcad()
-     document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML=length.textContent
-     document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
-     geradorCodigo()
-     
+if(length.textContent==='Comercial'){
+document.getElementById('cadvPrimary').style.display='block'
+limparcad()
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML=length.textContent
+document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
+geradorCodigo()
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Sala_comercial'>Sala comercial</p> 
-    <p id='Loja'>Loja</p>
-     <p id='Galpão'>Galpão</p>
-   
+<p id='Sala_comercial'>Sala comercial</p> 
+<p id='Loja'>Loja</p>
+<p id='Galpão'>Galpão</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#020202',
 showCloseButton: true,
 showConfirmButton: false,
@@ -233,31 +239,31 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
+document.getElementById('reflist2').innerHTML=length.textContent;
 Swal.close()
 })
 })
- }
+}
 
- if(length.textContent==='Rurais'){
-   document.getElementById('cadvPrimary').style.display='block'
-  limparcad()
-     document.getElementById('NumSerie').innerHTML= `######`,
-     document.getElementById('listRef1').innerHTML=length.textContent
-     document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
-     geradorCodigo()
-     
+if(length.textContent==='Rurais'){
+document.getElementById('cadvPrimary').style.display='block'
+limparcad()
+document.getElementById('NumSerie').innerHTML= `######`,
+document.getElementById('listRef1').innerHTML=length.textContent
+document.querySelectorAll('.my-custonRef2 h2').innerHTML=document.querySelectorAll('#custonRef2 p')
+geradorCodigo()
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Chácara'>Chácara</p> 
-    <p id='Sítio'>Sítio</p>
-     <p id='Fazenda'>Fazenda</p>
-   
+<p id='Chácara'>Chácara</p> 
+<p id='Sítio'>Sítio</p>
+<p id='Fazenda'>Fazenda</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#020202',
 showCloseButton: true,
 showConfirmButton: false,
@@ -267,11 +273,11 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
+document.getElementById('reflist2').innerHTML=length.textContent;
 Swal.close()
 })
 })
- }
+}
 
 })
 })
@@ -279,19 +285,19 @@ Swal.close()
 
 //casa edite
 document.getElementById('reflist2').addEventListener('click', function(){
-  var resp= document.getElementById('listRef1').innerHTML;
-  if(resp==='Casa'){
+var resp= document.getElementById('listRef1').innerHTML;
+if(resp==='Casa'){
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Casa'>Casa</p>
-    <p id='Edícula'>Edícula</p>
-     <p id='Casa_geminada'>Casa geminada</p>
-      <p id='Casa_em_condomínio'>Casa em condomínio</p>
+<p id='Casa'>Casa</p>
+<p id='Edícula'>Edícula</p>
+<p id='Casa_geminada'>Casa geminada</p>
+<p id='Casa_em_condomínio'>Casa em condomínio</p>
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#070707',
 showCloseButton: true,
 showConfirmButton: false,
@@ -300,29 +306,29 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
- Swal.close()
+document.getElementById('reflist2').innerHTML=length.textContent;
+Swal.close()
 })
 })
-  }
+}
 })
 
 // edite sobrado
 document.getElementById('reflist2').addEventListener('click', function(){
 
-   var resp= document.getElementById('listRef1').innerHTML;
-  if(resp==='Sobrado'){
-   
+var resp= document.getElementById('listRef1').innerHTML;
+if(resp==='Sobrado'){
+
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Sobrado'>Sobrado</p> 
-    <p id='Sobrado_em_condomínio'>Sobrado em condomínio</p>
-   
+<p id='Sobrado'>Sobrado</p> 
+<p id='Sobrado_em_condomínio'>Sobrado em condomínio</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#020202',
 showCloseButton: true,
 showConfirmButton: false,
@@ -332,29 +338,29 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
- 
+document.getElementById('reflist2').innerHTML=length.textContent;
+
 Swal.close()
 })
 })
-  }
- })
+}
+})
 
- //edite apartamentos
+//edite apartamentos
 document.getElementById('reflist2').addEventListener('click', function(){
-  var resp= document.getElementById('listRef1').innerHTML;
-  if(resp==='Apartamento'){
+var resp= document.getElementById('listRef1').innerHTML;
+if(resp==='Apartamento'){
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Apartamento'>Apartamento</p> 
-    <p id='Kitnet'>Kitnet</p>
-     <p id='Cobertura'>Cobertura</p>
-   
+<p id='Apartamento'>Apartamento</p> 
+<p id='Kitnet'>Kitnet</p>
+<p id='Cobertura'>Cobertura</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#070707',
 showCloseButton: true,
 showConfirmButton: false,
@@ -363,28 +369,28 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
- Swal.close()
+document.getElementById('reflist2').innerHTML=length.textContent;
+Swal.close()
 })
 })
-  }
+}
 })
 
 //edite Terreno
 document.getElementById('reflist2').addEventListener('click', function(){
-  var resp= document.getElementById('listRef1').innerHTML;
-  if(resp==='Terreno'){
+var resp= document.getElementById('listRef1').innerHTML;
+if(resp==='Terreno'){
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Terreno'>Terreno</p> 
-    <p id='Lote'>Lote</p>
-     <p id='Área'>Área</p>
-   
+<p id='Terreno'>Terreno</p> 
+<p id='Lote'>Lote</p>
+<p id='Área'>Área</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#070707',
 showCloseButton: true,
 showConfirmButton: false,
@@ -393,28 +399,28 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
- Swal.close()
+document.getElementById('reflist2').innerHTML=length.textContent;
+Swal.close()
 })
 })
-  }
+}
 })
 
 //edite Sala Comercial
 document.getElementById('reflist2').addEventListener('click', function(){
-  var resp= document.getElementById('listRef1').innerHTML;
-  if(resp==='Comercial'){
+var resp= document.getElementById('listRef1').innerHTML;
+if(resp==='Comercial'){
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Sala_comercial'>Sala comercial</p> 
-    <p id='Loja'>Loja</p>
-     <p id='Galpão'>Galpão</p>
-   
+<p id='Sala_comercial'>Sala comercial</p> 
+<p id='Loja'>Loja</p>
+<p id='Galpão'>Galpão</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#070707',
 showCloseButton: true,
 showConfirmButton: false,
@@ -423,28 +429,28 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
- Swal.close()
+document.getElementById('reflist2').innerHTML=length.textContent;
+Swal.close()
 })
 })
-  }
+}
 })
 
 //edite Rurais
 document.getElementById('reflist2').addEventListener('click', function(){
-  var resp= document.getElementById('listRef1').innerHTML;
-  if(resp==='Rurais'){
+var resp= document.getElementById('listRef1').innerHTML;
+if(resp==='Rurais'){
 Swal.fire({
 title: `Imóvel`,
 html: `
 <div id='custonRef2'>
-   <p id='Chácara'>Chácara</p> 
-    <p id='Sítio'>Sítio</p>
-     <p id='Fazenda'>Fazenda</p>
-   
+<p id='Chácara'>Chácara</p> 
+<p id='Sítio'>Sítio</p>
+<p id='Fazenda'>Fazenda</p>
+
 </div>
 `,
-background: 'hsl(208, 100%, 98%)',
+background: 'hsl(0, 0%, 0%)',
 color: '#070707',
 showCloseButton: true,
 showConfirmButton: false,
@@ -453,11 +459,11 @@ didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
 document.querySelectorAll('#custonRef2 p').forEach(length => {
 length.addEventListener('click', function () {
- document.getElementById('reflist2').innerHTML=length.textContent;
- Swal.close()
+document.getElementById('reflist2').innerHTML=length.textContent;
+Swal.close()
 })
 })
-  }
+}
 })
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -466,16 +472,16 @@ length.addEventListener('click', function () {
 document.querySelectorAll('#informecad p').forEach(length => {
 length.addEventListener('click', function () {
 
-  if(length.id==='titulo'){
-    Swal.fire({
+if(length.id==='titulo'){
+Swal.fire({
 title: `Titulo`,
 html: `
 <div id='custonTitulo'>
-    <div>
-     <input  id="inpuTitulo" type="text" placeholder="Titulo do imóvel">
-    </div>
-      <button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
-   
+<div>
+<input  id="inpuTitulo" type="text" placeholder="Titulo do imóvel">
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
 </div>
 `,
 background: 'hsl(208, 100%, 98%)',
@@ -485,36 +491,36 @@ showConfirmButton: false,
 customClass: { popup: 'my-comodos' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
- setInterval(function(){
-  var btn=document.getElementById('salvarComodos');
-  var inp=document.getElementById('inpuTitulo').value;
-    if(inp!=''){
-     btn.style.backgroundColor='rgb(0, 60, 255)'
-    }else{
-       btn.style.backgroundColor='rgb(101, 102, 102)'
-    }
- })
- document.getElementById('salvarComodos').addEventListener('click',function(){
- var inp=document.getElementById('inpuTitulo').value;
- if(inp){
-  document.getElementById('titulo').innerHTML=inp
-  Swal.close()
- //alert(inp)
- }
- })
-  };
- //alert(length.id)
-  if(length.id==='decrit'){
-   
-    Swal.fire({
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuTitulo').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuTitulo').value;
+if(inp){
+document.getElementById('titulo').innerHTML=inp
+Swal.close()
+//alert(inp)
+}
+})
+};
+//alert(length.id)
+if(length.id==='decrit'){
+
+Swal.fire({
 title: `Descreva o Imóvel`,
 html: `
 <div id='custonTitulo'>
-    <div>
-     <input  id="inpuDescrever" type="text" placeholder="Descrição do imóvel">
-    </div>
-      <button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
-   
+<div>
+<input  id="inpuDescrever" type="text" placeholder="Descrição do imóvel">
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
 </div>
 `,
 background: 'hsl(208, 100%, 98%)',
@@ -524,36 +530,38 @@ showConfirmButton: false,
 customClass: { popup: 'my-comodos' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
- setInterval(function(){
-  var btn=document.getElementById('salvarComodos');
-  var inp=document.getElementById('inpuDescrever').value;
-    if(inp!=''){
-     btn.style.backgroundColor='rgb(0, 60, 255)'
-    }else{
-       btn.style.backgroundColor='rgb(101, 102, 102)'
-    }
- })
- document.getElementById('salvarComodos').addEventListener('click',function(){
- var inp=document.getElementById('inpuDescrever').value;
- if(inp){
-  document.getElementById('decrit').innerHTML=inp
-  Swal.close()
- //alert(inp)
- }
- })
-  };
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuDescrever').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuDescrever').value;
+if(inp){
+document.getElementById('decrit').innerHTML=inp
+Swal.close()
+//alert(inp)
+}
+})
+};
 
-  if(length.id==='Quartos'){
-   
-    Swal.fire({
+
+// Quartos
+if(length.id==='Quartos'){
+
+Swal.fire({
 title: `Quartos?`,
 html: `
 <div id='custonTitulo'>
-    <div>
-    Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
-    </div>
-      <button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
-   
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
 </div>
 `,
 background: 'hsl(208, 100%, 98%)',
@@ -563,127 +571,400 @@ showConfirmButton: false,
 customClass: { popup: 'my-quarto' },
 didOpen: () => { document.body.style.paddingRight = '0px'; }
 });
- setInterval(function(){
-  var btn=document.getElementById('salvarComodos');
-  var inp=document.getElementById('inpuQQ').value;
-    if(inp!=''){
-     btn.style.backgroundColor='rgb(0, 60, 255)'
-    }else{
-       btn.style.backgroundColor='rgb(101, 102, 102)'
-    }
- })
- document.getElementById('salvarComodos').addEventListener('click',function(){
- var inp=document.getElementById('inpuQQ').value;
- var inp2=document.getElementById('inpuQT').value;
- if(inp){
-  if(inp2){
-document.getElementById('Quartos').innerHTML=`Quartos: (${inp}) / (${inp2}) m²`
-  } else{
-    document.getElementById('Quartos').innerHTML=`Quartos: (${inp})`
-  }
-  
-  Swal.close()
- //alert(inp)
- }
- })
-  }
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Quartos').innerHTML=`Quartos: (${inp}) / ${inp2}m²`
 
+} else{
+document.getElementById('Quartos').innerHTML=`Quartos: (${inp})`
+}
+Swal.close()
+}
+})
+}
+
+// Salas
+if(length.id==='Salas'){
+
+Swal.fire({
+title: `Salas?`,
+html: `
+<div id='custonTitulo'>
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-quarto' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Salas').innerHTML=`Salas: (${inp}) / ${inp2}m²`
+
+} else{
+document.getElementById('Salas').innerHTML=`Salas: (${inp})`
+}
+Swal.close()
+}
+})
+}
+
+// Cozinhas
+if(length.id==='Cozinhas'){
+
+Swal.fire({
+title: `Cozinhas?`,
+html: `
+<div id='custonTitulo'>
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-quarto' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Cozinhas').innerHTML=`Cozinhas: (${inp}) / ${inp2}m²`
+
+} else{
+document.getElementById('Cozinhas').innerHTML=`Cozinhas: (${inp})`
+}
+Swal.close()
+}
+})
+}
+
+// Banheiros
+if(length.id==='Banheiros'){
+
+Swal.fire({
+title: `Banheiros?`,
+html: `
+<div id='custonTitulo'>
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-quarto' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Banheiros').innerHTML=`Banheiros: (${inp}) / ${inp2}m²`
+
+} else{
+document.getElementById('Banheiros').innerHTML=`Banheiros: (${inp})`
+}
+Swal.close()
+}
+})
+}
+
+//piscina
+if(length.id==='Piscina'){
+
+Swal.fire({
+title: `Piscina?`,
+html: `
+<div id='custonTitulo'>
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-quarto' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Piscina').innerHTML=`Piscina: (${inp}) / ${inp2}m²`
+
+} else{
+document.getElementById('Piscina').innerHTML=`Piscina: (${inp})`
+}
+Swal.close()
+}
+})
+}
+
+//garagem
+if(length.id==='Garagem'){
+
+Swal.fire({
+title: `Garagem?`,
+html: `
+<div id='custonTitulo'>
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-quarto' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Garagem').innerHTML=`Garagem: (${inp}) / ${inp2}m²`
+
+} else{
+document.getElementById('Garagem').innerHTML=`Garagem: (${inp})`
+}
+Swal.close()
+}
+})
+}
+
+//area
+if(length.id==='Area'){
+
+Swal.fire({
+title: `Área?`,
+html: `
+<div id='custonTitulo'>
+<div>
+Quant: <input  id="inpuQQ" type="number" placeholder="00"> M²: <input  id="inpuQT" type="number" placeholder="00"> 
+</div>
+<button id="salvarComodos">Enviar<span class="material-symbols-outlined">send</span></button>
+
+</div>
+`,
+background: 'hsl(208, 100%, 98%)',
+color: '#111111',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-quarto' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+setInterval(function(){
+var btn=document.getElementById('salvarComodos');
+var inp=document.getElementById('inpuQQ').value;
+if(inp!=''){
+btn.style.backgroundColor='rgb(0, 60, 255)'
+}else{
+btn.style.backgroundColor='rgb(101, 102, 102)'
+}
+})
+document.getElementById('salvarComodos').addEventListener('click',function(){
+var inp=document.getElementById('inpuQQ').value;
+var inp2=document.getElementById('inpuQT').value;
+if(inp){
+if(inp2){
+document.getElementById('Area').innerHTML=`Área: (${inp}) / ${inp2}m²`
+} else{
+document.getElementById('Area').innerHTML=`Área: (${inp})`
+}
+Swal.close()
+}
+})
+}
 
 })
 })
-
 
 
 // Lapis I 
 document.querySelectorAll('#Cadastro i').forEach(length=>{
-  length.addEventListener('click', function(){
-    if(length.id==="I_laps00"){
-      //alert(length.id)
-     document.getElementById('reflist2').click()
-    };
-    if(length.id==="I_laps01"){
-   //alert(length.id)
- document.getElementById('titulo').click()
-    };
-      if(length.id==="I_laps02"){
-   //alert(length.id)
-   document.getElementById('decrit').click()
+length.addEventListener('click', function(){
+if(length.id==="I_laps00"){
+//alert(length.id)
+document.getElementById('reflist2').click()
+};
+if(length.id==="I_laps01"){
+//alert(length.id)
+document.getElementById('titulo').click()
+};
+if(length.id==="I_laps02"){
+//alert(length.id)
+document.getElementById('decrit').click()
+};
+if(length.id==="I_laps03"){
+// alert(length.id)
+document.getElementById('Quartos').click()
+};
+if(length.id==="I_laps04"){
+//alert(length.id)
+document.getElementById('Salas').click()
+};
+if(length.id==="I_laps05"){
+//alert(length.id)
+document.getElementById('Cozinhas').click()
+};
+if(length.id==="I_laps06"){
+// alert(length.id)
+document.getElementById('Banheiros').click()
+};
+if(length.id==="I_laps07"){
+//alert(length.id)
+document.getElementById('Piscina').click()
+};
+if(length.id==="I_laps08"){
+//alert(length.id)
+document.getElementById('Garagem').click()
+};
+if(length.id==="I_laps09"){
+//alert(length.id)
+document.getElementById('Area').click()
+};
 
-    };
-      if(length.id==="I_laps03"){
-  // alert(length.id)
-  document.getElementById('Quartos').click()
-
-    };
-      if(length.id==="I_laps04"){
-   alert(length.id)
-
-    };
-      if(length.id==="I_laps05"){
-   alert(length.id)
-
-    };
-      if(length.id==="I_laps06"){
-   alert(length.id)
-
-    };
-      if(length.id==="I_laps07"){
-   alert(length.id)
-
-    };
-
-  })
 })
-
-
+})
 
 document.getElementById('divFlax').style.display='none'
 document.getElementById('oquecadastrar').addEventListener('click',function(){
-    var resp= document.getElementById('divFlax').style.display
+var resp= document.getElementById('divFlax').style.display
 if(resp==='none'){
 document.getElementById('divFlax').style.display='block'
+ var visão=document.getElementById('visão');
+ visão.className='fa-solid fa-eye-slash'
 }else{
 document.getElementById('divFlax').style.display='none'
+ var visão=document.getElementById('visão');
+ visão.className='fa-solid fa-eye'
 }
-
-
 })
 
 document.getElementById('divmain').addEventListener('click', function(){
-       var resp= document.getElementById('divFlax').style.display
+var resp= document.getElementById('divFlax').style.display
 if(resp==='block'){
 document.getElementById('divFlax').style.display='none'
+ var visão=document.getElementById('visão');
+ visão.className='fa-solid fa-eye'
 }else{
 
 }
-
 })
 
 document.querySelectorAll('.prmaryEscol div').forEach(length=>{
- length.addEventListener('click', function (){
-    var div1= document.getElementById('dadv');
-    var div2= document.getElementById('endv');
-    var div3= document.getElementById('imgdv');
-    
-    if(length.textContent ==='db Imóvel'){
-       div1.className='Activ';
-        div2.className='nula';
-         div3.className='nula';
-         document.getElementById('Cadastro').style.display='block'
-    } else if(length.textContent ==='Endereço'){
-        div2.className='Activ';
-        div1.className='nula';
-         div3.className='nula';
-          document.getElementById('Cadastro').style.display='none'
-    } else {
-         div3.className='Activ';
-        div1.className='nula';
-         div2.className='nula';
-         document.getElementById('Cadastro').style.display='none'
-    } 
- 
-    
- })
+length.addEventListener('click', function (){
+var div1= document.getElementById('dadv');
+var div2= document.getElementById('endv');
+var div3= document.getElementById('imgdv');
+
+if(length.textContent ==='db Imóvel'){
+div1.className='Activ';
+div2.className='nula';
+div3.className='nula';
+document.getElementById('Cadastro').style.display='block'
+} else if(length.textContent ==='Endereço'){
+div2.className='Activ';
+div1.className='nula';
+div3.className='nula';
+document.getElementById('Cadastro').style.display='none'
+} else {
+div3.className='Activ';
+div1.className='nula';
+div2.className='nula';
+document.getElementById('Cadastro').style.display='none'
+} 
+
+
+})
 })
 
 // Gerar código
@@ -700,59 +981,76 @@ document.getElementById('NumSerie').innerHTML= `${codigo}`
 }
 }
 
-
 setInterval(function(){
 
-   var lbl2= document.getElementById('reflist2');
-   if(lbl2.innerHTML==='Lista referente?'){
-     lbl2.className='lblred'
-     document.getElementById('informecad').style.display='none'
-   }else{
-   lbl2.className='lblblack'
-    document.getElementById('informecad').style.display='block'
-   }
-    var lbl2= document.getElementById('titulo');
-   if(lbl2.innerHTML==='Titulo do Imóvel'){
-     lbl2.className='lblred'
-   }else{
-   lbl2.className='lblblack'
-   }
-    var lbl2= document.getElementById('decrit');
-   if(lbl2.innerHTML==='Descrição do imóvel'){
-     lbl2.className='lblred'
-   }else{
-   lbl2.className='lblblack'
-   }
-    var lbl2= document.getElementById('Quartos');
-   if(lbl2.innerHTML==='Quartos'){
-     lbl2.className='lblred'
-   }else{
-   lbl2.className='lblblack'
-   }
-    var lbl2= document.getElementById('Salas');
-   if(lbl2.innerHTML==='Salas'){
-     lbl2.className='lblred'
-   }else{
-   lbl2.className='lblblack'
-   }
-    var lbl2= document.getElementById('Cozinhas');
-   if(lbl2.innerHTML==='Cozinhas'){
-     lbl2.className='lblred'
-   }else{
-   lbl2.className='lblblack'
-   }
-    var lbl2= document.getElementById('Banheiros');
-   if(lbl2.innerHTML==='Banheiros'){
-     lbl2.className='lblred'
-   }else{
-   lbl2.className='lblblack'
-   }
+var lbl2= document.getElementById('reflist2');
+if(lbl2.innerHTML==='Lista referente?'){
+lbl2.className='lblred'
+document.getElementById('informecad').style.display='none'
+}else{
+lbl2.className='lblblack'
+document.getElementById('informecad').style.display='block'
+}
+var lbl2= document.getElementById('titulo');
+if(lbl2.innerHTML==='Titulo do Imóvel'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('decrit');
+if(lbl2.innerHTML==='Descrição do imóvel'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Quartos');
+if(lbl2.innerHTML==='Quartos'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Salas');
+if(lbl2.innerHTML==='Salas'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Cozinhas');
+if(lbl2.innerHTML==='Cozinhas'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Banheiros');
+if(lbl2.innerHTML==='Banheiros'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Piscina');
+if(lbl2.innerHTML==='Piscina'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Garagem');
+if(lbl2.innerHTML==='Garagem'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
+var lbl2= document.getElementById('Area');
+if(lbl2.innerHTML==='Área construída'){
+lbl2.className='lblred'
+}else{
+lbl2.className='lblblack'
+}
 
 },100)
 
 //fecher exit
 document.getElementById('exit').addEventListener('click', function(){
-  limparcad()
-  document.getElementById('dadv').click()
-   document.getElementById('cadvPrimary').style.display='none'
+limparcad()
+document.getElementById('dadv').click()
+document.getElementById('cadvPrimary').style.display='none'
 })
