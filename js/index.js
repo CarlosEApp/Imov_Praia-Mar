@@ -222,6 +222,7 @@ document.getElementById('nomeParagrafo').innerHTML=`Olá, ${doc.NomeAbrev}`;
  var foto= localStorage.getItem('ImagemADM_');
       if(!foto|| foto==''){
 document.getElementById('imgMenuUser').src= doc.Foto;
+//alert(doc.Foto)
       }else{
 document.getElementById('imgMenuUser').src= foto;
       }

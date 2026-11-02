@@ -1054,3 +1054,8 @@ limparcad()
 document.getElementById('dadv').click()
 document.getElementById('cadvPrimary').style.display='none'
 })
+
+
+
+
+document.getElementById("img").src = 'https://res.cloudinary.com/iydtsjvr/image/upload/f_auto/q_auto/8Regiao_2.png';
