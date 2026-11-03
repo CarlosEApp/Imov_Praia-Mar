@@ -317,58 +317,9 @@ window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${
 
 //Funções de adiministradores
 document.getElementById('divADM').addEventListener('click',function(){
-Swal.fire({
-title: `Funções Adm <span class="material-symbols-outlined">verified_user</span>`,
-html: `
-<div id='funADM'>
-<p id='funADM01'><span class="material-symbols-outlined">real_estate_agent</span> Cadastrar Imóvel </p>
-<p id='funADM02'> <span class="material-symbols-outlined">home_work</span> Imóveis Cadastrados </p>
-<p id='funADM03'><span class="material-symbols-outlined">currency_exchange</span> Imóveis Vendidos</p>
-<p id='funADM04'><span class="material-symbols-outlined">other_houses</span> Imóveis Alugados</p>
-<p id='funADM05'><span class="material-symbols-outlined">delete</span> Imóveis Exluidos</p>
-<p id='funADM06'><span class="material-symbols-outlined">family_group</span> Corretores</p>
-</div>
-`,
-background: 'hsl(113, 100%, 2%)',
-color: '#fafafa',
-showCloseButton: true,
-showConfirmButton: false,
-customClass: { popup: 'my-custom_img' },
-didOpen: () => { document.body.style.paddingRight = '0px'; }
-});
-document.querySelectorAll('#funADM p').forEach(length => {
-length.addEventListener('click', function () {
-  if(length.id==='funADM01'){
-    window.open('html/cadimóvel.html','_blank')
-   // alert(length.id)
-  }
 
-   if(length.id==='funADM02'){
-   // window.open('../html/cadimóvel.html','_blank')
-    //alert(length.id)
-  }
-
-     if(length.id==='funADM03'){
-   // window.open('../html/cadimóvel.html','_blank')
-    //alert(length.id)
-  }
-
-     if(length.id==='funADM04'){
-   // window.open('../html/cadimóvel.html','_blank')
-    //alert(length.id)
-  }
-
-     if(length.id==='funADM05'){
-   // window.open('../html/cadimóvel.html','_blank')
-   // alert(length.id)
-  }
-
-     if(length.id==='funADM06'){
-   // window.open('../html/cadimóvel.html','_blank')
-   // alert(length.id)
-  }
-})
-})
+    window.open('html/cadastro.html','_blank')
+   
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
