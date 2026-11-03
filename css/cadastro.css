@@ -38,7 +38,9 @@ color: rgb(255, 255, 255);
     width: 100%;
     max-width: 1920px;
     min-height: 100vh;
-   
+    background-image: url('../src/img01.jpg');
+    background-size: cover;
+    background-position: center;
 }
 header{
     margin: 0 auto;
@@ -89,7 +91,7 @@ margin-right: 20px;
         background-image: url('../src/logo-png.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgb(255, 253, 253);
+    background-color: rgba(255, 253, 253, 0);
     min-height: 100vh;
    
 }
@@ -102,7 +104,7 @@ margin-right: 20px;
     background-color: transparent;
     padding-top: 73px;
     background-color: rgb(0, 27, 53);
-    display: block;
+    display: none;
 }
 #mainMenu{
     min-height: 5vh;
@@ -170,6 +172,20 @@ text-decoration: underline 2px solid rgb(0, 255, 21);
     margin-top: 10px;
 }
     }
+    @media (max-width: 390px) {
+    .headerClass h2{
+    margin-left: 10px;
+    font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
+    text-shadow: 0px 0px 10px rgba(0, 155, 13, 0.61)
+    }
+}
+ @media (max-width: 330px) {
+    .headerClass h2{
+    margin-left: 10px;
+    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+    text-shadow: 0px 0px 10px rgba(0, 155, 13, 0.61)
+    }
+}
 
 #P_img{
     border-right: none;
