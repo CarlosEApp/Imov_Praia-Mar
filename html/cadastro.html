@@ -5,16 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Imóvel IPM</title>
         <link rel="shortcut icon" href="../src/aba.png" type="image/x-icon">
+        <link rel="stylesheet" href="../css/cadastro.css">
 
-    <meta property="og:title" content="IPM | Imóveis Praia & Mar | Seu imóvel em Itanhaém">
-
-    <meta property="og:description" content="Imobiliária especializada em Itanhaém-SP e região, atuando na venda e locação de imóveis no Litoral Sul, demais cidades do litoral paulista e em todo o estado de São Paulo.">
-
-    <meta property="og:url" content="https://www.imoveispraiaemar.com.br">
-
-    <meta property="og:image" content="https://www.seusite.com.br/src/logo-capa.jpg">
-
-    <meta property="og:site_name" content="Imóveis Praia & Mar">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,16 +23,43 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="../css/cadastro.css">
+
+    
+    <meta property="og:title" content="IPM | Imóveis Praia & Mar | Seu imóvel em Itanhaém">
+
+    <meta property="og:description" content="Imobiliária especializada em Itanhaém-SP e região, atuando na venda e locação de imóveis no Litoral Sul, demais cidades do litoral paulista e em todo o estado de São Paulo.">
+
+    <meta property="og:url" content="https://www.imoveispraiaemar.com.br">
+
+    <meta property="og:image" content="https://www.seusite.com.br/src/logo-capa.jpg">
+
+    <meta property="og:site_name" content="Imóveis Praia & Mar">
 </head>
 <body>
 <div class="container">
 
     <header>
         <div class="headerClass"> 
-            <h2>Cadastro de Imóvel</h2> <div id="menuButton"> <p id="P_Cadastrar">Cadastre</p> <p>Cadastrados</p> <p>db</p></div>  <p>Menu<span class="material-symbols-outlined">menu</span></p>
+            <h2>Cadastro de Imóvel</h2> <div id="menuButton"> <p id="P_Cadastrar">Cadastre</p> <p>Cadastrados</p> <p>db</p></div>  <p id="menu">Menu<i id="Imenu" class="fa-solid fa-bars"> </i></p>
         </div>
     </header>
+            
+           <div id="menu_lateral">
+       
 
+         <nav>
+          <ul> 
+              
+            <li><a id="a_Retornar"> Retornar</a></li>
+            <li><a id="a_togle" ><i  title="Tela Cheia" class="fa-solid fa-desktop"></i> Tela Cheia</a></li>
+            <li><a id="a_Cadastrar" >📝  Cadastre</a></li>
+            <li><a  id="sobre" href="#divQuemSomos">Sobre</a></li>
+            <li><a id="Admin"><i  class="fa-solid fa-user"></i> Administração</a></li>
+            <li><a id="exitMenu" ><i class="fa-solid fa-delete-left"></i> Exit </a></li> 
+         <!-- Adicione mais itens se quiser -->
+          </ul>
+         </nav>
+      </div>
     <main>
         <div class="mainClass" id="mainClass">
           <div class="mainFlax" id="mainFlax">

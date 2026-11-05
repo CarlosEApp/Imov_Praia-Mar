@@ -318,7 +318,7 @@ window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${
 //Funções de adiministradores
 document.getElementById('divADM').addEventListener('click',function(){
 
-    window.open('html/cadastro.html','_blank')
+    window.open('html/cadastro.html','_self')
    
 })
 
