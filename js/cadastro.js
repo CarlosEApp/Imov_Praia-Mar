@@ -85,9 +85,30 @@ measurementId: "G-6YMW4PXDZ7"
 firebase.initializeApp(firebaseConfig);
 //////////////////////////////////////////////////////////////////
 
+function limparCadastro(){
+   
+  document.getElementById("Operação_imobiliaria_01").value='';
+  document.getElementById("Operação_imobiliaria_02").value='';
+  document.getElementById('CodigoGerado').innerHTML='######';
+}
+
+// Gerar código
+function geradorCodigo(){
+var cod=document.getElementById('CodigoGerado').innerHTML;
+if(!cod|| cod==''||cod=='######'){
+var caracteres = 'A1B2C3D4E5F6G7H8I9JK1L2M3N4O5P6Q7R8S9TUVWXYZ';
+let codigo = '';
+for (let i = 0; i < 6; i++) {
+codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+document.getElementById('CodigoGerado').innerHTML= `${codigo}`
+}
+} else{
+}
+}
+
 document.querySelectorAll('#menuButton p').forEach(lenght => {
   lenght.addEventListener('click', function() {
-
+  
   if(lenght.innerHTML=='Cadastre'){
      var verde=  document.getElementById('dadosImovel'); var verde2=  document.getElementById('dbvalore');var verde3=  document.getElementById('dbEnd');
       var verde4=  document.getElementById('dbPessoal');var verde5=  document.getElementById('dbimag');
@@ -96,6 +117,43 @@ document.querySelectorAll('#menuButton p').forEach(lenght => {
         document.querySelector('.mainFlax').style.display = 'none';
          verde.className=''
     } else {
+  var operação01=document.getElementById("Operação_imobiliaria_01").value;
+ // var operação02=document.getElementById("Operação_imobiliaria_02").value;
+  if(!operação01||operação01==""){
+ geradorCodigo()
+  }else{
+    Swal.fire({
+title: `Cadastro em andamento`,
+html: `
+<div id='divCad'> 
+ <p id='novoCad'>Novo Cadastro</p>
+ <p id='ContCad'>Continuar Editando</p>
+</div>
+`,
+background: 'hsl(113, 100%, 2%)',
+color: '#fafafa',
+showCloseButton: true,
+showConfirmButton: false,
+customClass: { popup: 'my-custom_img' },
+didOpen: () => { document.body.style.paddingRight = '0px'; }
+});
+   document.querySelectorAll('.my-custom_img p').forEach(lenght=>{
+    lenght.addEventListener('click', function(){
+      
+      if(lenght.id==='novoCad'){
+        limparCadastro()
+        Swal.close()
+        setTimeout(function(){
+         geradorCodigo()
+
+        },1200)
+      }else{
+        Swal.close()
+      }
+    })
+   })
+
+  }
          verde.className='verdeLimao'; verde2.className=''; verde3.className=''; verde4.className=''; verde5.className='';
      document.querySelector('.mainFlax').style.display = 'block';  
 
