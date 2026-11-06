@@ -220,16 +220,12 @@ document.querySelector('.mainFlax').style.display = 'none';
 
 //cadatrar menu a
 document.getElementById('a_Cadastrar').addEventListener('click',function(){
-var bloqueio = document.querySelector('.mainFlax').style.display;
- if (bloqueio === 'block') {
-        document.querySelector('.mainFlax').style.display = 'none';
-        filterContainer.id = 'filteer_Container';
-    } else {
-      
-     document.querySelector('.mainFlax').style.display = 'block';   
-     filterContainer.id = '';
-}
+document.querySelectorAll('#menuButton p').forEach(length=>{
+  if(length.innerHTML==='Cadastre') length.click()
 })
+
+})
+
 
 
 //Menu Lateral
