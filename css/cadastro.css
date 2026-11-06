@@ -43,9 +43,7 @@ color: rgb(255, 255, 255);
     background-position: center;
     
 }
-#filteer_Container{
-filter: brightness(70%);
-}
+
 header{
     margin: 0 auto;
     position: fixed;
@@ -133,19 +131,21 @@ margin-right: 20px;
     background-color: rgb(0, 0, 0);
     color: rgb(250, 250, 250);
      cursor: pointer;
+     font-weight: 600;
 }
 .menuItems p:hover{
     background-color: rgb(102, 255, 0);
     color: rgb(7, 7, 7);
-    text-shadow: 0px 0px 1px rgb(8, 8, 8);
+ 
 
 }
 #mainCadastro{
         min-width: 70%;
     min-height: 77vh;
-    background-color: rgb(253, 254, 255);
+    background-color: rgb(255, 253, 254);
     margin-top: 10px;
     padding-bottom: 50px;
+    color: black;
 }
 #menuButton{
     display: flex;
@@ -160,7 +160,9 @@ align-items: center;
 cursor: pointer;
 margin-right: 20px;
     font-family: "Oleo Script", system-ui;
-     text-shadow: 0px 0px 2px rgba(24, 143, 0, 0.911)
+     text-shadow: 0px 0px 2px rgba(24, 143, 0, 0.911);
+     font-weight: 600;
+     
     
 }
 #menuButton p:hover{ 
@@ -193,7 +195,7 @@ text-decoration: underline 2px solid rgb(0, 255, 21);
     }
 }
 
-#P_img{
+#dbimag{
     border-right: none;
 }
 .activeButton{
@@ -219,7 +221,7 @@ padding: 0px;
 padding-top: 20px;
 padding-bottom: 30px;
 overflow-y: auto;
-font-family: 'Poppins', sans-serif;
+ font-family: "Oleo Script", system-ui;
 }
 #menu_lateral ul {
 list-style: none;
@@ -243,7 +245,7 @@ margin-left: 10px;
 font-weight: bold;
 }
 #menu_lateral a:hover{
-color: rgb(255, 115, 0);
+color: rgb(43, 255, 0);
 }
 
 .menu-ativo {
@@ -253,10 +255,10 @@ left: 0 !important;
 color: rgb(255, 255, 255);
 font-size: 14px;
 font-weight: bold;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-family: "Oleo Script", system-ui;
 }
 #menu_lateral #exitMenu:hover{
-color: rgb(223, 0, 111);
+ color: rgb(255, 0, 0);
 }
 #Imenu{
     margin-left: 3px;
@@ -264,4 +266,87 @@ color: rgb(223, 0, 111);
 #menu{
     display: flex;
     align-items: center;
+}
+#menu_lateral a{
+    display: flex;
+    align-items: center;
+}
+#menu_lateral i{
+    margin-right: 5px;
+      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+}
+#menu_lateral span{
+    margin-right: 3px;
+    font-size: clamp(2rem, 0.3vw  + 0.5rem, 2.100rem);
+    color: rgb(255, 0, 0);
+    
+     
+}
+#menu_lateral #a_Retornar{
+    color: rgb(255, 61, 2);
+     font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+}
+#menu_lateral #a_Retornar:hover{
+    color: rgb(0, 248, 12);
+}
+#menu_lateral a:hover span{
+    color: rgb(0, 248, 12);
+}
+
+.mainFlax .verdeLimao{
+    background-color: rgb(30, 255, 0);
+    color: black;
+    text-shadow: 0px 0px 1px black;
+}
+.part01cad {
+    margin: auto;
+    width: 100%;
+
+    min-height: 40vh;
+}
+.part01cad h2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: rgb(204, 204, 204);
+    text-shadow: 0px 0px 1px black;
+  
+}
+
+.divInptCad{
+    margin: auto;
+    width: 100%;
+    min-height: 50vh;
+    background-color: aqua;
+}
+
+#Operação_imobiliaria_01, #Operação_imobiliaria_02{
+    min-width: 150px;
+    padding: 12px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+      margin-bottom: 10px;
+     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+     color: aliceblue;
+     background-color: black;
+     outline: none;
+     font-weight: bold;
+    
+}
+#Operação_imobiliaria_01:hover, #Operação_imobiliaria_02:hover{
+  background-color: rgb(0, 255, 42);
+  color: black;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+}
+#Operação_imobiliaria_01 option, #Operação_imobiliaria_02 option{
+    border-radius: 20px;
+    background-color: rgb(2, 2, 2);
+    color: aliceblue;
+  font-weight: 600;
 }

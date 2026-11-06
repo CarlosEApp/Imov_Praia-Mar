@@ -85,26 +85,63 @@ measurementId: "G-6YMW4PXDZ7"
 firebase.initializeApp(firebaseConfig);
 //////////////////////////////////////////////////////////////////
 
-var filterContainer = document.querySelector('.container');
-filterContainer.id = 'filteer_Container';
-
 document.querySelectorAll('#menuButton p').forEach(lenght => {
-    
-    lenght.addEventListener('click', function() {
-
-var filterContainer = document.querySelector('.container');
-    
+  lenght.addEventListener('click', function() {
 
   if(lenght.innerHTML=='Cadastre'){
-  
+     var verde=  document.getElementById('dadosImovel'); var verde2=  document.getElementById('dbvalore');var verde3=  document.getElementById('dbEnd');
+      var verde4=  document.getElementById('dbPessoal');var verde5=  document.getElementById('dbimag');
   var bloqueio = document.querySelector('.mainFlax').style.display;
  if (bloqueio === 'block') {
         document.querySelector('.mainFlax').style.display = 'none';
-        filterContainer.id = 'filteer_Container';
+         verde.className=''
     } else {
-      
-     document.querySelector('.mainFlax').style.display = 'block';   
-     filterContainer.id = '';
+         verde.className='verdeLimao'; verde2.className=''; verde3.className=''; verde4.className=''; verde5.className='';
+     document.querySelector('.mainFlax').style.display = 'block';  
+
+     document.getElementById('part01cad').style.display='block';  document.getElementById('part02cad').style.display='none';  document.getElementById('part03cad').style.display='none'; 
+      document.getElementById('part04cad').style.display='none';  document.getElementById('part05cad').style.display='none'; 
+      document.querySelectorAll('#menuItems p').forEach(lenght =>{
+        lenght.addEventListener('click', function(){
+         
+       if(lenght.innerHTML==='Imóvel'){ lenght.className='verdeLimao';
+        verde2.className=''; verde3.className=''; verde4.className=''; verde5.className='';
+        document.getElementById('part01cad').style.display='block';  document.getElementById('part02cad').style.display='none';  document.getElementById('part03cad').style.display='none'; 
+       document.getElementById('part04cad').style.display='none';  document.getElementById('part05cad').style.display='none'; 
+
+        };
+
+      if(lenght.innerHTML==='Valores'){ lenght.className='verdeLimao';
+        verde.className=''; verde3.className=''; verde4.className=''; verde5.className='';
+        document.getElementById('part01cad').style.display='none';  document.getElementById('part02cad').style.display='block';  document.getElementById('part03cad').style.display='none'; 
+       document.getElementById('part04cad').style.display='none';  document.getElementById('part05cad').style.display='none'; 
+
+        };
+
+          if(lenght.innerHTML==='End'){ lenght.className='verdeLimao';
+              verde.className=''; verde2.className=''; verde4.className=''; verde5.className='';
+              document.getElementById('part01cad').style.display='none';  document.getElementById('part02cad').style.display='none';  document.getElementById('part03cad').style.display='block'; 
+             document.getElementById('part04cad').style.display='none';  document.getElementById('part05cad').style.display='none'; 
+
+        };
+
+          if(lenght.innerHTML==='Pessoal'){ lenght.className='verdeLimao';
+              verde.className=''; verde2.className=''; verde3.className=''; verde5.className='';
+              document.getElementById('part01cad').style.display='none';  document.getElementById('part02cad').style.display='none';  document.getElementById('part03cad').style.display='none'; 
+              document.getElementById('part04cad').style.display='block';  document.getElementById('part05cad').style.display='none'; 
+
+        };
+
+          if(lenght.innerHTML==='Img'){ lenght.className='verdeLimao';
+              verde.className=''; verde2.className=''; verde3.className=''; verde4.className='';
+              document.getElementById('part01cad').style.display='none';  document.getElementById('part02cad').style.display='none';  document.getElementById('part03cad').style.display='none'; 
+             document.getElementById('part04cad').style.display='none';  document.getElementById('part05cad').style.display='block'; 
+
+        };
+        
+        })
+      })
+    
 }
 };
 
@@ -135,7 +172,6 @@ var bloqueio = document.querySelector('.mainFlax').style.display;
      filterContainer.id = '';
 }
 })
-
 
 
 //Menu Lateral
@@ -171,3 +207,5 @@ document.getElementById('exitMenu').addEventListener('click',function(){
 document.getElementById('menu').click()
 });
 
+ document.getElementById('Operação_imobiliaria_02').value=''; document.getElementById('Operação_imobiliaria_01').value='';
+ 
